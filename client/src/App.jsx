@@ -17,14 +17,13 @@ export default function App() {
         const response = await axios.get(
           `https://www.googleapis.com/books/v1/volumes?q=steven+erikson&key=${bookKey}`
         );
-    
+
         const books = response.data.items;
-    
+
         console.log("The response is:", response);
         console.log("The data returned from the API is:", books);
-    
+
         updateBookData(books);
-        
       } catch (error) {
         console.error(
           "There was an error fetching data from the API.  Please try again.",
@@ -34,18 +33,16 @@ export default function App() {
     };
 
     getBook();
-
   }, []);
 
   useEffect(() => {
-
     if (bookData) {
-    console.log(`Here is the bookData:`, bookData);
+      console.log(`Here is the bookData:`, bookData);
 
-    console.log(
-      "The title of the selected book is:",
-      bookData[0].volumeInfo.title
-    )
+      console.log(
+        "The title of the selected book is:",
+        bookData[0].volumeInfo.title
+      );
     }
   }, [bookData]);
 
@@ -61,11 +58,16 @@ export default function App() {
       </div>
       <h1>The Loremaster's Library</h1>
       <div>
-        { bookData != null && bookData != undefined ? (
-        <p>{bookData[0].volumeInfo.title}</p>
-      ) : (
-        <p>Book Data Will Appear Here</p>
-      )}
+        {bookData != null && bookData != undefined ? (
+          <>
+            <p>{bookData[0].volumeInfo.title}</p>
+            <a href={bookData[0].volumeInfo.previewLink} target="_blank" >
+              <img src={bookData[0].volumeInfo.imageLinks.thumbnail} />
+            </a>
+          </>
+        ) : (
+          <p>Book Data Will Appear Here</p>
+        )}
       </div>
       <div className="card">
         <button onClick={() => setCount((count) => count + 1)}>
