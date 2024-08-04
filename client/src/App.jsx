@@ -1,10 +1,39 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
+import axios from 'axios'
 
-function App() {
+export default function App() {
   const [count, setCount] = useState(0)
+
+  const [bookData, updateBookData] = useState([]);
+
+  const bookKey = import.meta.env.VITE_BOOK_KEY;
+
+  const getBook = async () => {
+    try {
+    const response = await axios.get(`https://www.googleapis.com/books/v1/volumes?q=steven+erikson&key=${bookKey}`);
+    const books = response.data.items;
+
+    console.log('The response is:', response);
+    console.log("The data returned from the API is:", books);
+
+    updateBookData(books);
+
+    } catch (error) {
+      console.error("There was an error fetching data from the API.  Please try again.", error);
+    }
+  };
+
+  useEffect(() => {
+    getBook();
+  }, []);
+
+  useEffect(() => {
+    console.log(`Here is the bookData:`, bookData);
+    console.log("The title of the selected book is:", bookData[0].volumeInfo.title);
+  }, [bookData]); 
 
   return (
     <>
@@ -17,6 +46,13 @@ function App() {
         </a>
       </div>
       <h1>The Loremaster's Library</h1>
+      <div>
+        { bookData != null && bookData != undefined ? (
+        <p>{bookData[0].volumeInfo.title}</p>
+      ) : (
+        <p>Book Data Will Appear Here</p>
+      )}
+      </div>
       <div className="card">
         <button onClick={() => setCount((count) => count + 1)}>
           count is {count}
@@ -31,5 +67,3 @@ function App() {
     </>
   )
 }
-
-export default App
