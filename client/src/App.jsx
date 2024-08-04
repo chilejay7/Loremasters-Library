@@ -1,39 +1,53 @@
-import { useEffect, useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-import axios from 'axios'
+import { useEffect, useState } from "react";
+import reactLogo from "./assets/react.svg";
+import viteLogo from "/vite.svg";
+import "./App.css";
+import axios from "axios";
 
 export default function App() {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0);
 
-  const [bookData, updateBookData] = useState([]);
+  const [bookData, updateBookData] = useState();
 
   const bookKey = import.meta.env.VITE_BOOK_KEY;
 
-  const getBook = async () => {
-    try {
-    const response = await axios.get(`https://www.googleapis.com/books/v1/volumes?q=steven+erikson&key=${bookKey}`);
-    const books = response.data.items;
-
-    console.log('The response is:', response);
-    console.log("The data returned from the API is:", books);
-
-    updateBookData(books);
-
-    } catch (error) {
-      console.error("There was an error fetching data from the API.  Please try again.", error);
-    }
-  };
-
   useEffect(() => {
+    const getBook = async () => {
+      try {
+        const response = await axios.get(
+          `https://www.googleapis.com/books/v1/volumes?q=steven+erikson&key=${bookKey}`
+        );
+    
+        const books = response.data.items;
+    
+        console.log("The response is:", response);
+        console.log("The data returned from the API is:", books);
+    
+        updateBookData(books);
+        
+      } catch (error) {
+        console.error(
+          "There was an error fetching data from the API.  Please try again.",
+          error
+        );
+      }
+    };
+
     getBook();
+
   }, []);
 
   useEffect(() => {
+
+    if (bookData) {
     console.log(`Here is the bookData:`, bookData);
-    console.log("The title of the selected book is:", bookData[0].volumeInfo.title);
-  }, [bookData]); 
+
+    console.log(
+      "The title of the selected book is:",
+      bookData[0].volumeInfo.title
+    )
+    }
+  }, [bookData]);
 
   return (
     <>
@@ -65,5 +79,5 @@ export default function App() {
         Click on the Vite and React logos to learn more
       </p>
     </>
-  )
+  );
 }
