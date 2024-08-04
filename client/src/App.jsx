@@ -9,13 +9,14 @@ export default function App() {
 
   const [bookData, updateBookData] = useState();
 
-  const bookKey = import.meta.env.VITE_BOOK_KEY;
+  const apiKey = import.meta.env.VITE_BOOK_KEY;
 
   useEffect(() => {
+
     const getBook = async () => {
       try {
         const response = await axios.get(
-          `https://www.googleapis.com/books/v1/volumes?q=steven+erikson&key=${bookKey}`
+          `https://www.googleapis.com/books/v1/volumes?q=steven+erikson&key=${apiKey}`
         );
 
         const books = response.data.items;
@@ -33,6 +34,7 @@ export default function App() {
     };
 
     getBook();
+
   }, []);
 
   useEffect(() => {
