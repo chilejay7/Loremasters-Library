@@ -60,9 +60,12 @@ export default function App() {
       <div>
         {bookData != null && bookData != undefined ? (
           <>
+          <h2>{bookData[0].volumeInfo.authors[0]}</h2>
+
             {bookData.map((book) => (
               <div key={book.id}>
-                <p>{book.volumeInfo.title}</p>
+                <h3>{book.volumeInfo.title}</h3>
+                <p>{book.volumeInfo.subtitle}</p>
                   <a href={book.volumeInfo.previewLink} target="_blank">
                     <img src={book.volumeInfo.imageLinks.thumbnail} />
                   </a>
