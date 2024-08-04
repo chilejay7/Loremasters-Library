@@ -60,10 +60,14 @@ export default function App() {
       <div>
         {bookData != null && bookData != undefined ? (
           <>
-            <p>{bookData[0].volumeInfo.title}</p>
-            <a href={bookData[0].volumeInfo.previewLink} target="_blank" >
-              <img src={bookData[0].volumeInfo.imageLinks.thumbnail} />
-            </a>
+            {bookData.map((book) => (
+              <div key={book.id}>
+                <p>{book.volumeInfo.title}</p>
+                  <a href={book.volumeInfo.previewLink} target="_blank">
+                    <img src={book.volumeInfo.imageLinks.thumbnail} />
+                  </a>
+              </div>
+            ))}
           </>
         ) : (
           <p>Book Data Will Appear Here</p>
