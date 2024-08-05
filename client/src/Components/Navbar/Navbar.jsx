@@ -1,6 +1,8 @@
+import './Navbar.css'
+
 export default function Navbar() {
   return (
-    <header>
+    <header id="main-header">
       <h1>The Loremaster's Library</h1>
     </header>
   );
