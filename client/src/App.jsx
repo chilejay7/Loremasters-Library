@@ -56,7 +56,7 @@ export default function App() {
           <img src={reactLogo} className="logo react" alt="React logo" />
         </a>
       </div>
-      <h1>The Loremaster's Library</h1>
+    
       <div>
         {bookData != null && bookData != undefined ? (
           <>

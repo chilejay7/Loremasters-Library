@@ -1,0 +1,7 @@
+#main-header {
+    padding: 10px;
+    width: 100%;
+    background-size: contain;
+    /* background-repeat: no-repeat; */
+    background-image: url('./castle_fog.jpg');
+}
