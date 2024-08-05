@@ -61,6 +61,7 @@ export default function App() {
       <h1>The Loremaster's Library</h1>
       <div>
         {bookData != null && bookData != undefined ? (
+
           <>
           <h2>{bookData[0].volumeInfo.authors[0]}</h2>
 
@@ -69,13 +70,16 @@ export default function App() {
                 <h3>{book.volumeInfo.title}</h3>
                 <p>{book.volumeInfo.subtitle}</p>
                   <a href={book.volumeInfo.previewLink} target="_blank">
-                    <img src={book.volumeInfo.imageLinks.thumbnail} />
+                    <img src={book.volumeInfo.imageLinks.thumbnail} alt={`${book.volumeInfo.title} cover`}/>
                   </a>
               </div>
             ))}
           </>
+
         ) : (
-          <p>Book Data Will Appear Here</p>
+
+          <p>Loading...Book Data Will Appear Here</p>
+          
         )}
       </div>
       <div className="card">
