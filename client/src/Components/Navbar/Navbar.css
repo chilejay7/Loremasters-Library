@@ -2,6 +2,13 @@
     padding: 10px;
     width: 100%;
     background-size: contain;
-    /* background-repeat: no-repeat; */
     background-image: url('./castle_fog.jpg');
+    font-family: "Metal Mania";
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+#site-header {
+    color: black;
+    margin: 0;
 }
