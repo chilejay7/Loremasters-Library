@@ -5,7 +5,7 @@ import "./App.css";
 import axios from "axios";
 
 export default function App() {
-  const [count, setCount] = useState(0);
+  // const [count, setCount] = useState(0);
 
   const [bookData, updateBookData] = useState();
 
@@ -57,7 +57,7 @@ export default function App() {
         </a>
       </div>
     
-      <div>
+      <div id="main-body">
         {bookData != null && bookData != undefined ? (
           <>
             <h2>{bookData[0].volumeInfo.authors[0]}</h2>
@@ -84,7 +84,7 @@ export default function App() {
           <p>Loading...Book Data Will Appear Here</p>
         )}
       </div>
-      <div className="card">
+      {/* <div className="card">
         <button onClick={() => setCount((count) => count + 1)}>
           count is {count}
         </button>
@@ -94,7 +94,7 @@ export default function App() {
       </div>
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
-      </p>
+      </p> */}
     </>
   );
 }
