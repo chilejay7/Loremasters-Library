@@ -1,0 +1,7 @@
+#footer {
+    background-image: url('./castle_fog.jpg');
+    text-align: center;
+    padding: 10px;
+    opacity: .75;
+    border-radius: .5em;
+}

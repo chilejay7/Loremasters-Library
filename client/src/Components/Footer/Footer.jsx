@@ -1,8 +1,10 @@
+import './Footer.css'
+
 export default function Footer () {
     return (
-        <footer>
-            <h4>chilejay7 Developer</h4>
-            <p>&#169; 2024</p>
+        <footer id="footer">
+            <h4>&#169; Chilejay7</h4>
+            <p>Developer 2024</p>
         </footer>
     )
 }
