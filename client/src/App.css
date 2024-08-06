@@ -5,6 +5,12 @@
   text-align: center;
 }
 
+#main-body{
+  padding: 10px;
+  max-width: 95%;
+  margin: 0 auto;
+}
+
 .logo {
   height: 6em;
   padding: 1.5em;
