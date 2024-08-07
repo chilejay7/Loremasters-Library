@@ -5,18 +5,6 @@
   text-align: center;
 }
 
-#main-body{
-  padding: 10px;
-  max-width: 75%;
-  margin: 0 auto;
-}
-
-.metal-mania-regular {
-  font-family: "Metal Mania", system-ui;
-  font-weight: 400;
-  font-style: normal;
-}
-
 .logo {
   height: 6em;
   padding: 1.5em;
