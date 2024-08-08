@@ -31,23 +31,12 @@ export default function Home () {
   
       getBook();
     }, []);
-  
-    useEffect(() => {
-      if (bookData) {
-        console.log(`Here is the bookData:`, bookData);
-  
-        console.log(
-          "The title of the selected book is:",
-          bookData[0].volumeInfo.title
-        );
-      }
-    }, [bookData]);
 
     return (
         <>
          
       <div id="main-body">
-        {bookData != null && bookData != undefined ? (
+        {bookData ? (
           <>
             <h2>{bookData[0].volumeInfo.authors[0]}</h2>
 
