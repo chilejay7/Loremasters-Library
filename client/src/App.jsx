@@ -8,7 +8,7 @@ export default function App() {
     <>
       <Navbar />
 
-      <main>
+      <main className="main-content">
         <Outlet />
       </main>
 
