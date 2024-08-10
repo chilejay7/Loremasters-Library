@@ -20,9 +20,9 @@ export default function Home () {
           console.log("The response is:", response);
           console.log("The data returned from the API is:", books);
 
-          for (let i=0; i < books.length; i++) {
-            console.log(i, 'The thumbnail image link is:', books[i].volumeInfo.imageLinks.thumbnail)
-          }
+          // for (let i=0; i < books.length; i++) {
+          //   console.log(i, 'The thumbnail image link is:', books[i].volumeInfo.imageLinks.thumbnail)
+          // }
   
           updateBookData(books);
         } catch (error) {
@@ -51,7 +51,7 @@ export default function Home () {
                   <p>{book.volumeInfo.subtitle}</p>
                   <a href={book.volumeInfo.previewLink} target="_blank">
                     <img
-                      src={book.volumeInfo.imageLinks.thumbnail}
+                      src={book.volumeInfo.imageLinks ? book.volumeInfo.imageLinks.thumbnail : ""}        
                       title={book.volumeInfo.title}
                       alt={`${book.volumeInfo.title} cover`}
                     />
