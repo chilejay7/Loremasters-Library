@@ -9,7 +9,7 @@ const router = createBrowserRouter([
   {
     path: '/',
     element: <App />,
-    errorElement: <h2 className='error-header'>Page does not exist.  Please try another route.</h2>,
+    errorElement: <h2 className='error-header'>There was an error. Please review the logs and try again.</h2>,
     children: [
       {
         index: true,
