@@ -48,23 +48,9 @@ export default function Home () {
             <div id="card-display">
 
             {bookData.map((book) => (
-              <>
 
-              <BookCard book={ book } />
-                {/* <div key={book.id}>
-                  <h3>{book.volumeInfo.title}</h3>
-                  <p>{book.volumeInfo.subtitle}</p>
-                  <a href={book.volumeInfo.previewLink} target="_blank">
-                    <img
-                      src={book.volumeInfo.imageLinks ? book.volumeInfo.imageLinks.thumbnail : ""}        
-                      title={book.volumeInfo.title}
-                      alt={`${book.volumeInfo.title} cover`}
-                    />
-                  </a>
-                  <p>{book.volumeInfo.description}</p>
-                </div>
-                <hr></hr> */}
-              </>
+              <BookCard book={ book } key={book.id} />
+              
             ))}
             </div>
           </>
