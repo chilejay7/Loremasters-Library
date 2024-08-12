@@ -6,14 +6,22 @@
     font-family: "Metal Mania";
     font-weight: bold;
     font-size: 1.5rem;
-}
-
-#site-header {
     color: black;
-    margin: 0;
 }
 
-.NavMenu {
+.navbar {
+    margin-bottom: 20px;
     font-family: "Metal Mania";
     font-size: 1rem;
+
+    & .NavMenu {
+        width: 50%;
+    }
+}
+
+.navbar-nav {
+    width: 100%;
+    font-weight: bold;
+    font-size: 1.15rem;
+    justify-content: space-between;
 }
