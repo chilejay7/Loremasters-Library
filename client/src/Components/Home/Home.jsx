@@ -63,7 +63,7 @@ export default function Home () {
             ))}
           </>
         ) : (
-          <p>Loading...Book Data Will Appear Here</p>
+          <p className="loading">Loading...Book Data Will Appear Here</p>
         )}
       </div>
   
