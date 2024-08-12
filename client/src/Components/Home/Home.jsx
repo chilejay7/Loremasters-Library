@@ -45,6 +45,8 @@ export default function Home () {
           <>
             <h2>{bookData[0].volumeInfo.authors[0]}</h2>
 
+            <div id="card-display">
+
             {bookData.map((book) => (
               <>
 
@@ -64,10 +66,12 @@ export default function Home () {
                 <hr></hr> */}
               </>
             ))}
+            </div>
           </>
         ) : (
           <p className="loading">Loading...Book Data Will Appear Here</p>
         )}
+
       </div>
   
     </>

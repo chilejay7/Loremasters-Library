@@ -4,6 +4,7 @@ import './BookCard.css'
 export default function BookCard({ book }) {
 
   return (
+    <div className="card-container">
     <Card key={book.id} className="book-card" bg="dark">
       <Card.Body>
         <Card.Title>{book.volumeInfo.title}</Card.Title>
@@ -25,10 +26,11 @@ export default function BookCard({ book }) {
 </Card.Link>
     <hr></hr>
 
-        <Card.Text>{book.volumeInfo.description}</Card.Text>
+        <Card.Text className="book-description">{book.volumeInfo.description}</Card.Text>
         <Card.Link href="#">Card Link</Card.Link>
         
       </Card.Body>
     </Card>
+    </div>
   );
 }
