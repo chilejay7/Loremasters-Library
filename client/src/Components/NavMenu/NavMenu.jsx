@@ -42,7 +42,7 @@ export default function NavMenu() {
     </Navbar>
 
 
-    <Nav defaultActiveKey="/home" as="ul">
+    {/* <Nav defaultActiveKey="/home" as="ul">
       <Nav.Item as="li">
         <Nav.Link href="/home">Active</Nav.Link>
       </Nav.Item>
@@ -52,7 +52,7 @@ export default function NavMenu() {
       <Nav.Item as="li">
         <Nav.Link eventKey="link-2">Link</Nav.Link>
       </Nav.Item>
-    </Nav>
+    </Nav> */}
     
     </>
     

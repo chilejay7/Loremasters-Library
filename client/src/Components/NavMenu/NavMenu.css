@@ -16,4 +16,12 @@
 .NavMenu {
     font-family: "Metal Mania";
     font-size: 1rem;
+    width: 50%;
+}
+
+.navbar-nav {
+    width: 100%;
+    font-weight: bold;
+    font-size: 1.15rem;
+    justify-content: space-between;
 }
