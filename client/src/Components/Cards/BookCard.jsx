@@ -11,6 +11,7 @@ export default function BookCard({ book }) {
           <Card.Subtitle>{book.volumeInfo.subtitle}</Card.Subtitle>
 
           <hr></hr>
+          
           <Card.Link href={book.volumeInfo.previewLink} target="_blank">
             <img
               src={
@@ -22,6 +23,7 @@ export default function BookCard({ book }) {
               alt={`${book.volumeInfo.title} cover`}
             />
           </Card.Link>
+
           <hr></hr>
 
             <Card.Text className="book-description">
