@@ -1,6 +1,6 @@
 import Card from 'react-bootstrap/Card';
 
-function bookCard () {
+export default function bookCard () {
   return (
     <Card style={{ width: '18rem' }}>
       <Card.Body>
@@ -16,5 +16,3 @@ function bookCard () {
     </Card>
   );
 }
-
-export default bookCard;

@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import bookCard from "../Cards/BookCard";
 import axios from "axios"
 import './Home.css'
 
@@ -38,7 +39,9 @@ export default function Home () {
 
     return (
         <>
-         
+
+      <bookCard />
+
       <div id="main-body">
         {bookData ? (
           <>
@@ -46,6 +49,8 @@ export default function Home () {
 
             {bookData.map((book) => (
               <>
+
+              <bookCard />
                 <div key={book.id}>
                   <h3>{book.volumeInfo.title}</h3>
                   <p>{book.volumeInfo.subtitle}</p>
