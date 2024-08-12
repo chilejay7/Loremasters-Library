@@ -1,9 +1,10 @@
 import Card from "react-bootstrap/Card";
+import './BookCard.css'
 
 export default function BookCard({ book }) {
 
   return (
-    <Card style={{ width: "18rem" }} key={book.id}>
+    <Card key={book.id} className="book-card" bg="dark">
       <Card.Body>
         <Card.Title>{book.volumeInfo.title}</Card.Title>
         <Card.Subtitle className="mb-2 text-muted">
@@ -23,6 +24,7 @@ export default function BookCard({ book }) {
         />
 </Card.Link>
     <hr></hr>
+    
         <Card.Text>{book.volumeInfo.description}</Card.Text>
         <Card.Link href="#">Card Link</Card.Link>
         

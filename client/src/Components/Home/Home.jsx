@@ -49,7 +49,7 @@ export default function Home () {
               <>
 
               <BookCard book={ book } />
-                <div key={book.id}>
+                {/* <div key={book.id}>
                   <h3>{book.volumeInfo.title}</h3>
                   <p>{book.volumeInfo.subtitle}</p>
                   <a href={book.volumeInfo.previewLink} target="_blank">
@@ -61,7 +61,7 @@ export default function Home () {
                   </a>
                   <p>{book.volumeInfo.description}</p>
                 </div>
-                <hr></hr>
+                <hr></hr> */}
               </>
             ))}
           </>
