@@ -1,0 +1,17 @@
+#card-display {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+.book-card {
+    width: 375px;
+    height: 500px;
+    color: white;
+    margin: 10px;
+}
+
+.book-description {
+    max-height: 125px;
+    overflow: auto;
+}

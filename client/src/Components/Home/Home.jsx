@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import BookCard from "../Cards/BookCard";
 import axios from "axios"
 import './Home.css'
 
@@ -38,15 +39,19 @@ export default function Home () {
 
     return (
         <>
-         
+
       <div id="main-body">
         {bookData ? (
           <>
             <h2>{bookData[0].volumeInfo.authors[0]}</h2>
 
+            <div id="card-display">
+
             {bookData.map((book) => (
               <>
-                <div key={book.id}>
+
+              <BookCard book={ book } />
+                {/* <div key={book.id}>
                   <h3>{book.volumeInfo.title}</h3>
                   <p>{book.volumeInfo.subtitle}</p>
                   <a href={book.volumeInfo.previewLink} target="_blank">
@@ -58,13 +63,15 @@ export default function Home () {
                   </a>
                   <p>{book.volumeInfo.description}</p>
                 </div>
-                <hr></hr>
+                <hr></hr> */}
               </>
             ))}
+            </div>
           </>
         ) : (
           <p className="loading">Loading...Book Data Will Appear Here</p>
         )}
+
       </div>
   
     </>
