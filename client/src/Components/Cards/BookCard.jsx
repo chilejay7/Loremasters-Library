@@ -24,11 +24,10 @@ export default function BookCard({ book }) {
           </Card.Link>
           <hr></hr>
 
-          <div className="card-text">
             <Card.Text className="book-description">
               {book.volumeInfo.description}
             </Card.Text>
-          </div>
+        
         </Card.Body>
       </Card>
     </div>
