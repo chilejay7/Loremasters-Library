@@ -43,7 +43,7 @@ export default function Home () {
       <div id="main-body">
         {bookData ? (
           <>
-            <h2>{bookData[0].volumeInfo.authors[0]}</h2>
+            <h2 className="header author">{bookData[0].volumeInfo.authors[0]}</h2>
 
             <div id="card-display">
 
