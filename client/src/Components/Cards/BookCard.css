@@ -11,6 +11,7 @@
     color: white;
     margin: 10px;
     opacity: .95;
+    border: solid white 1px;
     box-shadow: 10px 10px 10px black;
 }
 

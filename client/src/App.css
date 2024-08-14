@@ -3,7 +3,9 @@
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
-  background-image: url('/castle_fog.jpg');
+  /* background-image: url('/castle_tunnel.jpg'); */
+  background-size: cover;
+  /* background-position: center; */
  }
 
 .main-content {
