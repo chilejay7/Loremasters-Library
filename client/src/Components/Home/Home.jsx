@@ -9,7 +9,7 @@ import SearchForm from "../SearchForm/SearchForm";
 export default function Home() {
   const apiKey = import.meta.env.VITE_BOOK_KEY;
 
-  const [searchTerm, setSearchTerm] = useState("brandon sanderson");
+  const [searchTerm, setSearchTerm] = useState();
 
   const [bookData, updateBookData] = useState();
 

@@ -5,7 +5,9 @@ import Form from "react-bootstrap/Form";
 import axios from "axios";
 
 const SearchForm = ({ handleSearch, handleChange, searchTerm }) => {
-    <Form className="d-flex" onSubmit = { handleSearch }>
+
+    return (
+        <Form className="d-flex" onSubmit = { handleSearch }>
         <Form.Control
           type="search"
           placeholder="Search for the title or author"
@@ -16,6 +18,8 @@ const SearchForm = ({ handleSearch, handleChange, searchTerm }) => {
         />
         <Button variant="outline-success">Search</Button>
       </Form>
+    )
+
 }
 
 export default SearchForm;
