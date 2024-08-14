@@ -8,13 +8,29 @@ import "./Home.css";
 export default function Home() {
   const apiKey = import.meta.env.VITE_BOOK_KEY;
 
-  // const [searchTerm, setSearchTerm] = useState("");
+  const [searchTerm, setSearchTerm] = useState('brandon sanderson');
 
   const [bookData, updateBookData] = useState();
+
+  // const handleSearch = (evt) => {
+  //   evt.preventDefault();
+
+  //   console.log(evt);
+  //   const text = evt.target.value.trim().toLowerCase();
+
+  //   setSearchTerm(currTerm => {
+  //     currTerm = text;
+  //     return currTerm;
+  // });
+
+  // }
 
   useEffect(() => {
     const getBook = async () => {
       try {
+
+        console.log('The search term is:', searchTerm);
+
         const response = await axios.get(
           `https://www.googleapis.com/books/v1/volumes?q=${searchTerm}&maxResults=12&key=${apiKey}`
         );
@@ -25,6 +41,9 @@ export default function Home() {
         console.log("The data returned from the API is:", books);
 
         updateBookData(books);
+
+        setSearchTerm('');
+
       } catch (error) {
         console.error(
           "There was an error fetching data from the API.  Please try again.",
@@ -38,12 +57,13 @@ export default function Home() {
 
   return (
     <>
-      <Form className="d-flex">
+      <Form className="d-flex" >
         <Form.Control
           type="search"
           placeholder="Search for the title or author"
           className="me-2"
           aria-label="Search"
+          value={ searchTerm }
         />
         <Button variant="outline-success">Search</Button>
       </Form>
