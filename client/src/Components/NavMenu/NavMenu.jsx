@@ -25,12 +25,12 @@ export default function NavMenu() {
           <Nav className="me-auto">
             <Nav.Link href="/">Home</Nav.Link>
             <Nav.Link href="/login">Login</Nav.Link>
-            <NavDropdown title="Dropdown" id="basic-nav-dropdown">
-              <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
+            <NavDropdown title="Site Locations" id="basic-nav-dropdown">
+              <NavDropdown.Item href="#action/3.1">Books</NavDropdown.Item>
               <NavDropdown.Item href="#action/3.2">
-                Another action
+                Tabletop Games
               </NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
+              <NavDropdown.Item href="#action/3.3">Whiskey</NavDropdown.Item>
               <NavDropdown.Divider />
               <NavDropdown.Item href="#action/3.4">
                 Separated link
