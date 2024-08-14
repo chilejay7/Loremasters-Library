@@ -6,12 +6,6 @@
     min-height: 75vh;
   }
 
-  .metal-mania-regular {
-    font-family: "Metal Mania", system-ui;
-    font-weight: 400;
-    font-style: normal;
-  }
-
   .loading {
     font-family: "Metal Mania", system-ui;
     font-weight: bold;
