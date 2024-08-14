@@ -1,15 +1,13 @@
 import { useState, useEffect } from "react";
 import BookCard from "../Cards/BookCard";
-import Button from "react-bootstrap/Button";
-import Form from "react-bootstrap/Form";
 import axios from "axios";
-import "./Home.css";
 import SearchForm from "../SearchForm/SearchForm";
+import "./Home.css";
 
 export default function Home() {
   const apiKey = import.meta.env.VITE_BOOK_KEY;
 
-  const [searchTerm, setSearchTerm] = useState();
+  const [searchTerm, setSearchTerm] = useState('steven erikson');
 
   const [bookData, updateBookData] = useState();
 
