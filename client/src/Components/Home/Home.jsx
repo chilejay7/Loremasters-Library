@@ -44,7 +44,7 @@ export default function Home() {
 
   const handleChange = (evt) => {
     evt.preventDefault();
-    
+
     const text = evt.target.value;
     console.log('The new search term is:', text);
 
