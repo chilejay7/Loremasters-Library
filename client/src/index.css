@@ -67,7 +67,27 @@ button:focus-visible {
   }
 } */
 
+.metal-mania-regular {
+  font-family: "Metal Mania", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.sedan-regular {
+  font-family: "Sedan", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.sedan-regular-italic {
+  font-family: "Sedan", serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+
 body {
   background-color: #242424;
   color: white;
+  font-family: "Sedan", serif;
 }

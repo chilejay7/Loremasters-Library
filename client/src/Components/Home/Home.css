@@ -1,16 +1,9 @@
 #main-body{
     padding: 10px;
-    max-width: 80%;
     margin: 0 auto;
     justify-content: center;
     align-items: center;
     min-height: 75vh;
-  }
-  
-  .metal-mania-regular {
-    font-family: "Metal Mania", system-ui;
-    font-weight: 400;
-    font-style: normal;
   }
 
   .loading {
@@ -18,6 +11,5 @@
     font-weight: bold;
     font-size: 2.5rem;
     align-items: center;
-    border: white solid .1rem;
     margin-top: 50px;
   }

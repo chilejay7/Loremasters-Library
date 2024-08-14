@@ -1,7 +1,8 @@
 #card-display {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     flex-wrap: wrap;
+    margin: 0 auto;
   }
 
 .book-card {
@@ -9,9 +10,12 @@
     height: 500px;
     color: white;
     margin: 10px;
+    opacity: .95;
+    border: solid white 1px;
+    box-shadow: 10px 10px 10px black;
 }
 
 .book-description {
-    max-height: 125px;
+    max-height: 150px;
     overflow: auto;
 }
