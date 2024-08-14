@@ -13,7 +13,7 @@ export default function Home () {
       const getBook = async () => {
         try {
           const response = await axios.get(
-            `https://www.googleapis.com/books/v1/volumes?q=brandon+sanderson&key=${apiKey}`
+            `https://www.googleapis.com/books/v1/volumes?q=brandon+sanderson&maxResults=12&key=${apiKey}`
           );
   
           const books = response.data.items;
