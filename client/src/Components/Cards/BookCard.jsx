@@ -1,5 +1,7 @@
 import Card from "react-bootstrap/Card";
+import Image from "react-bootstrap/Image";
 import "./BookCard.css";
+
 
 export default function BookCard({ book }) {
   return (
@@ -12,7 +14,7 @@ export default function BookCard({ book }) {
           <hr></hr>
           
           <Card.Link href={book.volumeInfo.previewLink} target="_blank">
-            <img
+            <Image
               src={
                 book.volumeInfo.imageLinks
                   ? book.volumeInfo.imageLinks.thumbnail
@@ -20,7 +22,7 @@ export default function BookCard({ book }) {
               }
               title={book.volumeInfo.title}
               alt={`${book.volumeInfo.title} cover`}
-            />
+            rounded />
           </Card.Link>
 
           <hr></hr>

@@ -20,10 +20,6 @@ export default function Home () {
   
           console.log("The response is:", response);
           console.log("The data returned from the API is:", books);
-
-          // for (let i=0; i < books.length; i++) {
-          //   console.log(i, 'The thumbnail image link is:', books[i].volumeInfo.imageLinks.thumbnail)
-          // }
   
           updateBookData(books);
         } catch (error) {
