@@ -4,18 +4,18 @@ import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import axios from "axios";
 import "./Home.css";
+import SearchForm from "../SearchForm/SearchForm";
 
 export default function Home() {
   const apiKey = import.meta.env.VITE_BOOK_KEY;
 
-  const [searchTerm, setSearchTerm] = useState('brandon sanderson');
+  const [searchTerm, setSearchTerm] = useState("brandon sanderson");
 
   const [bookData, updateBookData] = useState();
 
   const getBook = async () => {
     try {
-
-      console.log('The search term is:', searchTerm);
+      console.log("The search term is:", searchTerm);
 
       const response = await axios.get(
         `https://www.googleapis.com/books/v1/volumes?q=${searchTerm}&maxResults=12&key=${apiKey}`
@@ -28,8 +28,7 @@ export default function Home() {
 
       updateBookData(books);
 
-      setSearchTerm('');
-
+      setSearchTerm("");
     } catch (error) {
       console.error(
         "There was an error fetching data from the API.  Please try again.",
@@ -46,12 +45,12 @@ export default function Home() {
     evt.preventDefault();
 
     const text = evt.target.value;
-    console.log('The new search term is:', text);
+    console.log("The new search term is:", text);
 
-    setSearchTerm(currTerm => {
+    setSearchTerm((currTerm) => {
       currTerm = text;
       return currTerm;
-    })
+    });
   };
 
   const handleSearch = (evt) => {
@@ -61,17 +60,7 @@ export default function Home() {
 
   return (
     <>
-      <Form className="d-flex" onSubmit = { handleSearch }>
-        <Form.Control
-          type="search"
-          placeholder="Search for the title or author"
-          className="me-2"
-          aria-label="Search"
-          value = { searchTerm }
-          onChange = { handleChange }
-        />
-        <Button variant="outline-success">Search</Button>
-      </Form>
+    <SearchForm handleSearch={ handleSearch } handleChange={ handleChange } searchTerm={ searchTerm } />
 
       <div id="main-body">
         {bookData ? (
