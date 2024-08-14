@@ -12,58 +12,63 @@ export default function Home() {
 
   const [bookData, updateBookData] = useState();
 
-  // const handleSearch = (evt) => {
-  //   evt.preventDefault();
+  const getBook = async () => {
+    try {
 
-  //   console.log(evt);
-  //   const text = evt.target.value.trim().toLowerCase();
+      console.log('The search term is:', searchTerm);
 
-  //   setSearchTerm(currTerm => {
-  //     currTerm = text;
-  //     return currTerm;
-  // });
+      const response = await axios.get(
+        `https://www.googleapis.com/books/v1/volumes?q=${searchTerm}&maxResults=12&key=${apiKey}`
+      );
 
-  // }
+      const books = response.data.items;
+
+      console.log("The response is:", response);
+      console.log("The data returned from the API is:", books);
+
+      updateBookData(books);
+
+      setSearchTerm('');
+
+    } catch (error) {
+      console.error(
+        "There was an error fetching data from the API.  Please try again.",
+        error
+      );
+    }
+  };
 
   useEffect(() => {
-    const getBook = async () => {
-      try {
-
-        console.log('The search term is:', searchTerm);
-
-        const response = await axios.get(
-          `https://www.googleapis.com/books/v1/volumes?q=${searchTerm}&maxResults=12&key=${apiKey}`
-        );
-
-        const books = response.data.items;
-
-        console.log("The response is:", response);
-        console.log("The data returned from the API is:", books);
-
-        updateBookData(books);
-
-        setSearchTerm('');
-
-      } catch (error) {
-        console.error(
-          "There was an error fetching data from the API.  Please try again.",
-          error
-        );
-      }
-    };
-
     getBook();
   }, []);
 
+  const handleChange = (evt) => {
+    evt.preventDefault();
+    
+    const text = evt.target.value;
+    console.log('The new search term is:', text);
+
+    setSearchTerm(currTerm => {
+      currTerm = text;
+      return currTerm;
+    })
+  };
+
+  const handleSearch = (evt) => {
+    evt.preventDefault();
+    getBook();
+  };
+
   return (
     <>
-      <Form className="d-flex" >
+      <Form className="d-flex" onSubmit = { handleSearch }>
         <Form.Control
           type="search"
           placeholder="Search for the title or author"
           className="me-2"
           aria-label="Search"
-          value={ searchTerm }
+          value = { searchTerm }
+          onChange = { handleChange }
         />
         <Button variant="outline-success">Search</Button>
       </Form>
