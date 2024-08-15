@@ -1,9 +1,10 @@
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
+import './SearchForm.css';
 
 const SearchForm = ({ handleSearch, handleChange, searchTerm }) => {
   return (
-    <Form className="d-flex" onSubmit={handleSearch}>
+    <Form className="d-flex" onSubmit={handleSearch} id="search-form">
       <Form.Control
         type="search"
         placeholder="Search for the title or author"
