@@ -19,6 +19,7 @@ export default function Footer() {
             bgColor="black"
             fgColor="white"
             url="https://github.com/chilejay7"
+            target="_blank"
           />
           <h5>GitHub</h5>
         </div>
@@ -26,9 +27,10 @@ export default function Footer() {
         <div className="icon">
           <SocialIcon
             style={styles.socialIconSize}
-            bgColor="blue"
+            bgColor="black"
             fgColor="white"
             url="https://www.linkedin.com/in/cody-burkholder-4b072848/"
+            target="_blank"
           />
           <h5>LinkedIn</h5>
         </div>
