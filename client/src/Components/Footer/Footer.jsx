@@ -4,8 +4,8 @@ import "./Footer.css";
 export default function Footer() {
     const styles = {
         socialIconSize: {
-          height: 40,
-          width: 40,
+          height: 37,
+          width: 37,
         },
       };
 
