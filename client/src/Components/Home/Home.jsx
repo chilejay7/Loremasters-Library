@@ -63,9 +63,9 @@ export default function Home() {
       <div id="main-body">
         {bookData ? (
           <>
-            <h2 className="header author">
+            <h3 className="header author">
               {bookData[0].volumeInfo.authors[0]}
-            </h2>
+            </h3>
 
             <div id="card-display">
               {bookData.map((book) => (
