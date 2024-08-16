@@ -30,7 +30,6 @@ export default function Footer() {
             bgColor="black"
             fgColor="white"
             url="mailto:codyburk7@gmail.com"
-            // url="https://www.credly.com/badges/a4e6555b-73e7-463e-ae53-cdd81770858d/public_url"
             target="_blank"
           />
           <h5>Contact</h5>
