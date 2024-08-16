@@ -21,7 +21,7 @@ export default function Footer() {
             url="https://github.com/chilejay7"
             target="_blank"
           />
-          <h5>GitHub</h5>
+          <h5 className="icon-label">GitHub</h5>
         </div>
 
         <div className="icon">
@@ -32,7 +32,7 @@ export default function Footer() {
             url="mailto:codyburk7@gmail.com"
             target="_blank"
           />
-          <h5>Contact</h5>
+          <h5 className="icon-label">Contact</h5>
         </div>
 
         <div className="icon">
@@ -43,7 +43,7 @@ export default function Footer() {
             url="https://www.linkedin.com/in/cody-burkholder-4b072848/"
             target="_blank"
           />
-          <h5>LinkedIn</h5>
+          <h5 className="icon-label">LinkedIn</h5>
         </div>
 
       </div>
