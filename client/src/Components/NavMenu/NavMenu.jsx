@@ -13,7 +13,7 @@ export default function NavMenu() {
     
     <header id="main-header">
       <h1 id="site-header">The Loremaster's Library</h1>
-      <p>A study of books & whiskey</p>
+      <h2>A study of books & whiskey</h2>
     </header>
 
     <Navbar expand="lg" className="bg-body-tertiary">
@@ -26,11 +26,11 @@ export default function NavMenu() {
             <Nav.Link href="/">Home</Nav.Link>
             <Nav.Link href="/login">Login</Nav.Link>
             <NavDropdown title="Site Locations" id="basic-nav-dropdown">
-              <NavDropdown.Item href="#action/3.1">Books</NavDropdown.Item>
+              <NavDropdown.Item href="/books">Books</NavDropdown.Item>
               <NavDropdown.Item href="/tabletop">
                 Tabletop Games
               </NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.3">Whiskey</NavDropdown.Item>
+              <NavDropdown.Item href="/whiskey">Whiskey</NavDropdown.Item>
               <NavDropdown.Divider />
               <NavDropdown.Item href="#action/3.4">
                 Separated link

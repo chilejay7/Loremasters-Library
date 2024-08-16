@@ -4,6 +4,7 @@ import App from './App.jsx';
 import Home from './Components/Home/Home.jsx';
 import Login from './Components/Login/Login.jsx';
 import Tabletop from './Components/Tabletop/Tabletop.jsx';
+import Whiskey from './Components/Whiskey/Whiskey.jsx';
 import './index.css';
 
 const router = createBrowserRouter([
@@ -23,6 +24,14 @@ const router = createBrowserRouter([
       {
         path:'/tabletop',
         element: <Tabletop />,
+      },
+      {
+        path: '/books',
+        element: <Home />,
+      },
+      {
+        path: '/whiskey',
+        element: <Whiskey />,
       }
      
     ]
