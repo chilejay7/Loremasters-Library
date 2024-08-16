@@ -9,3 +9,10 @@
     margin-top: 1.5rem;
     font-family: "Metal Mania";
 }
+
+.icon-container {
+    display: flex;
+    margin: 0 auto;
+    justify-content: space-between;
+    width: 10%;
+}
