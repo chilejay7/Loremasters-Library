@@ -27,6 +27,7 @@ export default function Home() {
       updateBookData(books);
 
       setSearchTerm("");
+
     } catch (error) {
       console.error(
         "There was an error fetching data from the API.  Please try again.",
@@ -36,7 +37,9 @@ export default function Home() {
   };
 
   useEffect(() => {
+
     getBook();
+
   }, []);
 
   const handleChange = (evt) => {
@@ -74,7 +77,7 @@ export default function Home() {
             </div>
           </>
         ) : (
-          <p className="loading construction">Loading...Book Data Will Appear Here</p>
+          <h3 className="loading construction">Loading...Book Data Will Appear Here</h3>
         )}
       </div>
     </>
