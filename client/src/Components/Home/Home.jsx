@@ -74,7 +74,7 @@ export default function Home() {
             </div>
           </>
         ) : (
-          <p className="loading">Loading...Book Data Will Appear Here</p>
+          <p className="loading construction">Loading...Book Data Will Appear Here</p>
         )}
       </div>
     </>

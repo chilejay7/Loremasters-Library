@@ -30,8 +30,8 @@ export default function NavMenu() {
               </NavDropdown.Item>
               <NavDropdown.Item href="/whiskey">Whiskey</NavDropdown.Item>
               <NavDropdown.Divider />
-              <NavDropdown.Item href="#action/3.4">
-                Separated link
+              <NavDropdown.Item href="/tobacco">
+                Pipes and Cigars
               </NavDropdown.Item>
             </NavDropdown>
           </Nav>

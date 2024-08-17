@@ -3,6 +3,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import App from './App.jsx';
 import Home from './Components/Home/Home.jsx';
 import Login from './Components/Login/Login.jsx';
+import PipeCigar from './Components/PipeCigar/PipeCigar.jsx';
 import Tabletop from './Components/Tabletop/Tabletop.jsx';
 import Whiskey from './Components/Whiskey/Whiskey.jsx';
 import './index.css';
@@ -32,6 +33,10 @@ const router = createBrowserRouter([
       {
         path: '/whiskey',
         element: <Whiskey />,
+      },
+      {
+        path: '/tobacco',
+        element: <PipeCigar />,
       }
      
     ]
