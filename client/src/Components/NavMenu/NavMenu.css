@@ -1,5 +1,5 @@
 #main-header {
-    padding: 10px;
+    padding-top: 10px;
     width: 100%;
     background-size: contain;
     background-image: url('./castle_fog.jpg');
@@ -10,7 +10,7 @@
 }
 
 .navbar {
-    margin-bottom: 20px;
+    margin: 0;
     font-family: "Metal Mania";
     font-size: 1rem;
 

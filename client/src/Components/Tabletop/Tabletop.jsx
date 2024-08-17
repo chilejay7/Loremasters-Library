@@ -1,6 +1,6 @@
 const Tabletop = () => {
     return (
-        <h3>Tabletop Gaming Under Construction</h3>
+        <h3 className="loading construction">Tabletop Gaming Under Construction</h3>
     )
 }
 
