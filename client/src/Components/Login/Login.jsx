@@ -1,3 +1,3 @@
 export default function Login () {
-    return <h2 className="loading">Login Page Under Construction</h2>
+    return <h3 className="loading construction">Login Under Construction</h3>
 }
