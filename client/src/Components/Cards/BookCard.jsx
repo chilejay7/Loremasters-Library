@@ -9,10 +9,12 @@ export default function BookCard({ book }) {
       <Card key={book.id} className="book-card" bg="dark">
         <Card.Body>
           <div className="card-title">
-            <Card.Title className="book-title">{book.volumeInfo.title}
-            <Card.Subtitle className="book-title">{book.volumeInfo.subtitle}</Card.Subtitle>
+            <Card.Title className="book-title">
+              {book.volumeInfo.title}
+              <Card.Subtitle className="book-subtitle">
+                {book.volumeInfo.subtitle}
+              </Card.Subtitle>
             </Card.Title>
-      
           </div>
 
           <hr></hr>
@@ -25,7 +27,7 @@ export default function BookCard({ book }) {
               }
               title={book.volumeInfo.title}
               alt={`${book.volumeInfo.title} cover`}
-              rounded
+              // rounded
             />
           </Card.Link>
 

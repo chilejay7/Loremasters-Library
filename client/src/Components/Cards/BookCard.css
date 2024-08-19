@@ -21,6 +21,9 @@
 }
 
 .card-title {
-    height: 45px;
-}
+    height: 55px;
 
+    & .book-subtitle {
+            margin-top: 5px;
+    }  
+}
