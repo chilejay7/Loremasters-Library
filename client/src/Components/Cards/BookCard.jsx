@@ -18,6 +18,7 @@ export default function BookCard({ book }) {
           </div>
 
           <hr></hr>
+          
           <Card.Link href={book.volumeInfo.previewLink} target="_blank">
             <Image
               src={

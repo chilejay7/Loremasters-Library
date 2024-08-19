@@ -27,3 +27,7 @@
             margin-top: 5px;
     }  
 }
+
+.card-body {
+    height: 100px;
+}
