@@ -17,16 +17,11 @@ export default function BasicRating({ rating }) {
           "& > legend": { mt: 2 },
         }}
       >
+        <Typography component="legend">Average Rating</Typography>
         {rating ? (
-          <>
-            <Typography component="legend">Average Rating</Typography>
-            <Rating name="read-only" value={value} readOnly />
-          </>
+          <Rating name="read-only" value={value} readOnly />
         ) : (
-          <>
-            <Typography component="legend">Average Rating</Typography>
-            <Rating name="no-value" value={0} readOnly />
-          </>
+          <Rating name="no-value" value={0} readOnly />
         )}
       </Box>
     </>
