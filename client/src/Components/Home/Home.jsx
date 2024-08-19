@@ -26,7 +26,7 @@ export default function Home() {
 
       updateBookData(books);
 
-      setSearchTerm("");
+      setSearchTerm('');
 
     } catch (error) {
       console.error(
