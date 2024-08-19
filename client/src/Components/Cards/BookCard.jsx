@@ -26,7 +26,7 @@ export default function BookCard({ book }) {
             rounded />
           </Card.Link>
 
-          <BasicRating />
+          <BasicRating rating={book.volumeInfo.averageRating} />
 
           <hr></hr>
 
