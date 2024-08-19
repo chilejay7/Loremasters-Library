@@ -1,28 +1,35 @@
-import * as React from 'react';
-import Box from '@mui/material/Box';
-import Rating from '@mui/material/Rating';
-import Typography from '@mui/material/Typography';
+import * as React from "react";
+import Box from "@mui/material/Box";
+import Rating from "@mui/material/Rating";
+import Typography from "@mui/material/Typography";
 
 export default function BasicRating({ rating }) {
-  const [value, setValue] = React.useState(0);
+  const [value, setValue] = React.useState(2);
 
-    React.useEffect(() => {
-        setValue(rating);
-    }, [rating]);
+  React.useEffect(() => {
+    setValue(rating);
+  }, [rating]);
 
   return (
-    <Box
-      sx={{
-        '& > legend': { mt: 2 },
-      }}
-    >
-   
-      <Typography component="legend">Read only</Typography>
-      <Rating name="read-only" value={value} readOnly />
-     
-      <Typography component="legend">No rating given</Typography>
-      <Rating name="no-value" value={null} />
-    </Box>
+    <>
+      <Box
+        sx={{
+          "& > legend": { mt: 2 },
+        }}
+      >
+        {rating ? (
+          <>
+            <Typography component="legend">Average Rating</Typography>
+            <Rating name="read-only" value={value} readOnly />
+          </>
+        ) : (
+          <>
+            <Typography component="legend">Average Rating</Typography>
+            <Rating name="no-value" value={0} readOnly />
+          </>
+        )}
+      </Box>
+    </>
   );
 }
 
