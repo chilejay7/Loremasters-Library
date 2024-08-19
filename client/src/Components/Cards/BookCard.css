@@ -19,3 +19,8 @@
     max-height: 150px;
     overflow: auto;
 }
+
+.card-title {
+    height: 45px;
+}
+
