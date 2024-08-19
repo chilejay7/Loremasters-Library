@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import BookCard from "../Cards/BookCard";
 import axios from "axios";
 import SearchForm from "../SearchForm/SearchForm";
+import BasicRating from "../Rating/Rating";
 import "./Home.css";
 
 export default function Home() {
