@@ -1,15 +1,21 @@
 import Card from "react-bootstrap/Card";
 import Image from "react-bootstrap/Image";
+import BasicRating from "../Rating/Rating";
 import "./BookCard.css";
-
 
 export default function BookCard({ book }) {
   return (
     <div className="card-container">
       <Card key={book.id} className="book-card" bg="dark">
         <Card.Body>
-          <Card.Title>{book.volumeInfo.title}</Card.Title>
-          <Card.Subtitle>{book.volumeInfo.subtitle}</Card.Subtitle>
+          <div className="card-title">
+            <Card.Title className="book-title">
+              {book.volumeInfo.title}
+              <Card.Subtitle className="book-subtitle">
+                {book.volumeInfo.subtitle}
+              </Card.Subtitle>
+            </Card.Title>
+          </div>
 
           <hr></hr>
           
@@ -22,15 +28,17 @@ export default function BookCard({ book }) {
               }
               title={book.volumeInfo.title}
               alt={`${book.volumeInfo.title} cover`}
-            rounded />
+              // rounded
+            />
           </Card.Link>
+
+          <BasicRating rating={book.volumeInfo.averageRating} />
 
           <hr></hr>
 
-            <Card.Text className="book-description">
-              {book.volumeInfo.description}
-            </Card.Text>
-        
+          <Card.Text className="book-description">
+            {book.volumeInfo.description}
+          </Card.Text>
         </Card.Body>
       </Card>
     </div>

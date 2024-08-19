@@ -6,8 +6,8 @@
   }
 
 .book-card {
-    width: 375px;
-    height: 500px;
+    width: 500px;
+    height: 575px;
     color: white;
     margin: 10px;
     opacity: .95;
@@ -18,4 +18,12 @@
 .book-description {
     max-height: 150px;
     overflow: auto;
+}
+
+.card-title {
+    height: 55px;
+
+    & .book-subtitle {
+            margin-top: 5px;
+    }  
 }
