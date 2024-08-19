@@ -1,5 +1,6 @@
 import Card from "react-bootstrap/Card";
 import Image from "react-bootstrap/Image";
+import BasicRating from "../Rating/Rating";
 import "./BookCard.css";
 
 
@@ -24,6 +25,8 @@ export default function BookCard({ book }) {
               alt={`${book.volumeInfo.title} cover`}
             rounded />
           </Card.Link>
+
+          <BasicRating />
 
           <hr></hr>
 
