@@ -9,6 +9,11 @@
     color: black;
 }
 
+/* This styling applies to the profile avatar component when displayed in the mobile device menu. */
+.avatar {
+    justify-content: center;
+}
+
 .navbar {
     margin: 0;
     font-family: "Metal Mania";
@@ -26,6 +31,7 @@
     justify-content: space-between;
 }
 
-.avatar {
-    justify-content: center;
+/* This class is specifically for the responsive component that displays a menu on mobile device view ports */
+.navbar-toggler {
+    margin: 0 auto;
 }
