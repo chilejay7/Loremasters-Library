@@ -25,3 +25,7 @@
     font-size: 1.15rem;
     justify-content: space-between;
 }
+
+.avatar {
+    justify-content: center;
+}
