@@ -1,4 +1,5 @@
 import { SocialIcon } from "react-social-icons";
+import Copyright from "./Copyright";
 import "./Footer.css";
 
 export default function Footer() {
@@ -11,7 +12,7 @@ export default function Footer() {
 
   return (
     <footer id="footer">
-      <h4>&#169; Chilejay7 &#183; Developer 2024</h4>
+      {/* <h4>Chilejay7 &#183; Developer 2024</h4> */}
       <div className="icon-container">
         <div className="icon">
           <SocialIcon
@@ -46,7 +47,8 @@ export default function Footer() {
           <h5 className="icon-label">LinkedIn</h5>
         </div>
 
-      </div>
+        </div>
+        <Copyright />
     </footer>
   );
 }
