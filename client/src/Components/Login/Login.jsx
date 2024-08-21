@@ -55,7 +55,7 @@ const Login = () => {
               color="primary"
               
             >
-              Sign Up
+              Login
             </Button>
             <Grid container justifyContent="flex-end">
               <Grid item>
