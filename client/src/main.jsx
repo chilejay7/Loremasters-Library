@@ -7,6 +7,7 @@ import Login from './Components/Login/Login.jsx';
 import PipeCigar from './Components/PipeCigar/PipeCigar.jsx';
 import Tabletop from './Components/Tabletop/Tabletop.jsx';
 import Whiskey from './Components/Whiskey/Whiskey.jsx';
+import SignUp from './Components/Login/SignUp.jsx';
 import './index.css';
 
 const router = createBrowserRouter([
@@ -38,6 +39,10 @@ const router = createBrowserRouter([
       {
         path: '/tobacco',
         element: <PipeCigar />,
+      },
+      {
+        path:'/signup',
+        element: <SignUp />,
       }
      
     ]
