@@ -8,6 +8,7 @@ import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
+import './Login.css';
 
 export default function SignUp() {
   return (
@@ -77,14 +78,14 @@ export default function SignUp() {
             fullWidth
             variant="contained"
             color="primary"
-            
+            className="login-button"
           >
             Sign Up
           </Button>
           <Grid container justifyContent="flex-end">
             <Grid item>
-              <Link href="#" variant="body2">
-                Already have an account? Sign in
+              <Link href="/login" variant="body2">
+                Already have an account? Sign-in
               </Link>
             </Grid>
           </Grid>
