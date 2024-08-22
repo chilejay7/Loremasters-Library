@@ -10,8 +10,8 @@ import "./Login.css";
 
 const Login = () => {
   return (
-    <Container component="main" maxWidth="xs">
-      <CssBaseline />
+    <Container component="main" maxWidth="xs" className='login-form'>
+      {/* <CssBaseline /> */}
       <div>
         <Typography component="h1" variant="h5">
           Login
@@ -19,8 +19,8 @@ const Login = () => {
 
         <form>
           <Grid container spacing={2}>
-            <Grid item xs={12} sm={6}></Grid>
-            <Grid item xs={12} sm={6}></Grid>
+            
+            
             <Grid item xs={12}>
               <TextField
                 variant="outlined"
@@ -56,13 +56,13 @@ const Login = () => {
           </Button>
           <Grid container justifyContent="flex-end">
             <Grid item>
-              <NavLink href="/signup" variant="body2">
+              <NavLink href="/signup" variant="body2" className='login-link'>
                 Don't have an account? Sign-Up
               </NavLink>
             </Grid>
           </Grid>
-        </form>
-        
+          </form>
+
       </div>
       <Box mt={5}></Box>
     </Container>
