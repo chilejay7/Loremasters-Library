@@ -3,7 +3,7 @@ import CssBaseline from '@mui/material/CssBaseline';
 import TextField from '@mui/material/TextField';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
-import Link from '@mui/material/Link';
+import NavLink from '@mui/material/Link';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
@@ -12,8 +12,8 @@ import './Login.css';
 
 export default function SignUp() {
   return (
-    <Container component="main" maxWidth="xs">
-      <CssBaseline />
+    <Container component="main" maxWidth="xs" className='login-form'>
+      {/* <CssBaseline /> */}
       <div>
         <Typography component="h1" variant="h5">
           Sign up
@@ -84,9 +84,9 @@ export default function SignUp() {
           </Button>
           <Grid container justifyContent="flex-end">
             <Grid item>
-              <Link href="/login" variant="body2">
+              <NavLink href="/login" variant="body2" className='login-link'>
                 Already have an account? Sign-in
-              </Link>
+              </NavLink>
             </Grid>
           </Grid>
         </form>
