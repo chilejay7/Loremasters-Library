@@ -4,7 +4,7 @@ form .login-button {
 
 .login-form {
     margin-top: 20px;
-    color: black;
+    color: white;
     border-radius: .5em;
 
     & .login-link {
