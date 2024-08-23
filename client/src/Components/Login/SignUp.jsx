@@ -1,5 +1,4 @@
 import Button from '@mui/material/Button';
-import CssBaseline from '@mui/material/CssBaseline';
 import TextField from '@mui/material/TextField';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
@@ -30,6 +29,7 @@ export default function SignUp() {
                 id="firstName"
                 label="First Name"
                 autoFocus
+                className="login-field"
               />
             </Grid>
             <Grid item xs={12} sm={6}>
@@ -41,6 +41,7 @@ export default function SignUp() {
                 label="Last Name"
                 name="lastName"
                 autoComplete="lname"
+                className="login-field"
               />
             </Grid>
             <Grid item xs={12}>
@@ -52,6 +53,7 @@ export default function SignUp() {
                 label="Email Address"
                 name="email"
                 autoComplete="email"
+                className="login-field"
               />
             </Grid>
             <Grid item xs={12}>
@@ -64,6 +66,7 @@ export default function SignUp() {
                 type="password"
                 id="password"
                 autoComplete="current-password"
+                className="login-field"
               />
             </Grid>
             <Grid item xs={12}>

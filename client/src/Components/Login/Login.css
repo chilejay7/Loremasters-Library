@@ -3,12 +3,16 @@ form .login-button {
 }
 
 .login-form {
-    background-color: white;
     margin-top: 20px;
     color: black;
     border-radius: .5em;
 
     & .login-link {
         margin-bottom: 10px;
+    }
+
+    & .login-field {
+        background-color: white;
+        border-radius: .3em;
     }
 }
