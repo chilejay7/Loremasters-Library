@@ -6,6 +6,7 @@ form .login-button {
     background-color: white;
     margin-top: 20px;
     color: black;
+    border-radius: .5em;
 
     & .login-link {
         margin-bottom: 10px;
