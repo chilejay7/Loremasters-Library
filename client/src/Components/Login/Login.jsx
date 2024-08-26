@@ -1,6 +1,5 @@
 import NavLink from "react-bootstrap/esm/NavLink";
 import Button from "@mui/material/Button";
-import CssBaseline from "@mui/material/CssBaseline";
 import TextField from "@mui/material/TextField";
 import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
@@ -30,6 +29,7 @@ const Login = () => {
                 label="Email Address"
                 name="email"
                 autoComplete="email"
+                className="login-field"
               />
             </Grid>
             <Grid item xs={12}>
@@ -42,6 +42,7 @@ const Login = () => {
                 type="password"
                 id="password"
                 autoComplete="current-password"
+                className="login-field"
               />
             </Grid>
           </Grid>
