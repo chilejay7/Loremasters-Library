@@ -2,6 +2,7 @@ const express = require("express");
 const app = express();
 const PORT = process.env.PORT || 7075;
 const path = require("path");
+const db = require('./config/connection');
 const morgan = require("morgan");
 
 const routes = require("./routes");
@@ -16,6 +17,8 @@ app.get("/", (req, res) => {
 
 app.use(routes);
 
-app.listen(PORT, () => {
-    console.log(`API server is running on PORT ${PORT}.`)
-});
+db.once('open', () => {
+    app.listen(PORT, () => {
+        console.log(`API server is running on PORT ${PORT}.`)
+    });
+})
