@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
-import BookCard from "../Cards/BookCard";
+import BookCard from "../../Components/Cards/BookCard";
 import axios from "axios";
-import SearchForm from "../SearchForm/SearchForm";
+import SearchForm from "../../Components/SearchForm/SearchForm";
 import "./Home.css";
 
 export default function Home() {
