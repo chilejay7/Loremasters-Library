@@ -2,7 +2,7 @@ import ReactDOM from 'react-dom/client';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import App from './App.jsx';
 import Books from './Components/Books/Books.jsx';
-import Home from './Components/Home/Home.jsx';
+import Home from './Pages/Home/Home.jsx';
 import Login from './Components/Login/Login.jsx';
 import PipeCigar from './Components/PipeCigar/PipeCigar.jsx';
 import Tabletop from './Components/Tabletop/Tabletop.jsx';
