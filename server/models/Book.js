@@ -1,11 +1,29 @@
-const {Schema, model} = require('mongoose');
+const { Schema, model } = require("mongoose");
 
-const bookSchema = new Schema (
+const bookSchema = new Schema({
+  title: {
+    type: String,
+    required: true,
+    trim: true,
+  },
+  authors: [
     {
-        title: {
-            type: String,
-            required: true,
-            trim: true,
-        }
-    }
-)
+      type: String,
+      required: true,
+    },
+  ],
+  category: [
+    {
+      type: String,
+    },
+  ],
+  publishedDate: {
+    type: Date,
+  },
+  publisher: {
+    type: String,
+  },
+  pageCount: {
+    type: Number,
+  },
+});
