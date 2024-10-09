@@ -27,3 +27,7 @@ const bookSchema = new Schema({
     type: Number,
   },
 });
+
+const Book = model('Book', bookSchema);
+
+module.exports = Book;
