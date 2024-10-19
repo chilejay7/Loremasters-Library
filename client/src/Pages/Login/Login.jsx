@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import NavLink from "react-bootstrap/esm/NavLink";
 import Button from "@mui/material/Button";
 import TextField from "@mui/material/TextField";
@@ -8,6 +9,10 @@ import Container from "@mui/material/Container";
 import "./Login.css";
 
 const Login = () => {
+
+  const [ loginData, setLoginData ] = useState({ username: '', password: ''});
+  const [ validated ] = (false);
+
   return (
     <Container component="main" maxWidth="xs" className='login-form'>
       {/* <CssBaseline /> */}
