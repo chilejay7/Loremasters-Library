@@ -11,7 +11,18 @@ import "./Login.css";
 const Login = () => {
 
   const [ loginData, setLoginData ] = useState({ username: '', password: ''});
-  const [ validated ] = (false);
+  const [ validated ] = useState(false);
+
+  const handleChange = (evt) => {
+    const { name, value } = evt.target;
+    console.log('The username value on login is:', value);
+    setLoginData({...loginData, [name]: value});
+  }
+
+  const handleSubmit = (evt) => {
+    evt.preventDefault();
+    setLoginData({ username: '', password: '' });
+  }
 
   return (
     <Container component="main" maxWidth="xs" className='login-form'>
@@ -21,22 +32,23 @@ const Login = () => {
           Login
         </Typography>
 
-        <form>
+        <form onSubmit={ handleSubmit }>
           <Grid container spacing={2}>
-            
             
             <Grid item xs={12}>
               <TextField
+                onChange={handleChange}
                 variant="outlined"
                 required
                 fullWidth
-                id="email"
-                label="Email Address"
-                name="email"
-                autoComplete="email"
+                id="username"
+                label="Username"
+                name="username"
+                autoComplete="username"
                 className="login-field"
               />
             </Grid>
+
             <Grid item xs={12}>
               <TextField
                 variant="outlined"
@@ -50,6 +62,7 @@ const Login = () => {
                 className="login-field"
               />
             </Grid>
+
           </Grid>
           <Button
             type="submit"
