@@ -16,12 +16,13 @@ const Login = () => {
   const handleChange = (evt) => {
     const { name, value } = evt.target;
     console.log('The username value on login is:', value);
-    setLoginData({...loginData, [name]: value});
+    setLoginData({...loginData, [name]: value });
   }
 
   const handleSubmit = (evt) => {
     evt.preventDefault();
     setLoginData({ username: '', password: '' });
+    console.log('The login info has been submitted.  Current login data in state:', loginData)
   }
 
   return (
@@ -32,8 +33,8 @@ const Login = () => {
           Login
         </Typography>
 
-        <form onSubmit={ handleSubmit }>
-          <Grid container spacing={2}>
+        <form >
+          <Grid container spacing={2} >
             
             <Grid item xs={12}>
               <TextField
@@ -51,6 +52,7 @@ const Login = () => {
 
             <Grid item xs={12}>
               <TextField
+                onChange={ handleChange }
                 variant="outlined"
                 required
                 fullWidth
@@ -65,6 +67,7 @@ const Login = () => {
 
           </Grid>
           <Button
+            onSubmit={ handleSubmit }
             type="submit"
             fullWidth
             variant="contained"
