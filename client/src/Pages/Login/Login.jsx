@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { loginUser } from '../../Utils/API';
+
 import Form from "react-bootstrap/Form";
 import NavLink from "react-bootstrap/esm/NavLink";
 import Button from "@mui/material/Button";
@@ -11,7 +12,10 @@ import Container from "@mui/material/Container";
 import "./Login.css";
 
 const Login = () => {
-  const [loginData, setLoginData] = useState({ username: "", password: "" });
+  const [loginData, setLoginData] = useState({ 
+    username: "", 
+    password: "" });
+
   const [validated] = useState(false);
 
   const handleChange = (evt) => {
@@ -22,6 +26,7 @@ const Login = () => {
 
   const handleSubmit = async (evt) => {
     evt.preventDefault();
+    console.log('Attempting to login.  Please wait...');
 
     try {
       const response = await loginUser(loginData)
@@ -51,7 +56,7 @@ const Login = () => {
           Login
         </Typography>
 
-        <Form >
+        <Form onSubmit={handleSubmit}>
           <Grid container spacing={2}>
             <Grid item xs={12}>
               <TextField
@@ -83,7 +88,6 @@ const Login = () => {
             </Grid>
           </Grid>
           <Button
-            onSubmit={handleSubmit}
             type="submit"
             fullWidth
             variant="contained"

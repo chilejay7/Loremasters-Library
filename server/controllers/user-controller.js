@@ -13,4 +13,8 @@ const getUser = async (req, res) => {
         : res.json(searchedUser)
 };
 
-module.exports = { getUser };
+const login = ({ body }, res) => {
+    console.log(body);
+}
+
+module.exports = { getUser, login };
