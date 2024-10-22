@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { loginUser } from '../../Utils/API';
 import Form from "react-bootstrap/Form";
 import NavLink from "react-bootstrap/esm/NavLink";
 import Button from "@mui/material/Button";
@@ -19,11 +20,25 @@ const Login = () => {
     setLoginData({ ...loginData, [name]: value });
   };
 
-  const handleSubmit = (evt) => {
+  const handleSubmit = async (evt) => {
     evt.preventDefault();
+
+    try {
+      const response = await loginUser(loginData)
+
+      if (!response.ok) {
+        throw new Error('The login attempt failed.  Please try again.')
+      }
+    } 
+
+    catch (err) {
+      console.error(err);
+    }
+
     setLoginData({ username: "", password: "" });
+
     console.log(
-      "The login info has been submitted.  Current login data in state:",
+      "The login info has been submitted.  Current login data in state is:",
       loginData
     );
   };
