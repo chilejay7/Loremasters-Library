@@ -14,7 +14,7 @@ import "./Login.css";
 const Login = () => {
   const [loginData, setLoginData] = useState({ 
     username: "", 
-    password: "" 
+    password: ""
   });
 
   const [validated] = useState(false);
