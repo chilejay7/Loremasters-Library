@@ -1,5 +1,5 @@
 const jwt = require('jsonwebtoken');
-const secret = SERVER_SECRET;
+const secret = require('dotenv').config();
 const expiration = '4h';
 
 const authMiddleware = (req, res, next) => {
@@ -24,7 +24,7 @@ const authMiddleware = (req, res, next) => {
     next();
 }
 
-const signToken = ({ username, email, _id }) {
+const signToken = ({ username, email, _id }) => {
     const payload = { username, email, _id };
 
     return jwt.sign({ data: payload }, secret, { expiresIn: expiration });
