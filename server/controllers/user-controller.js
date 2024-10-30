@@ -13,8 +13,24 @@ const getUser = async (req, res) => {
         : res.json(searchedUser)
 };
 
-const login = ({ body }, res) => {
+const login = async ({ body }, res) => {
     console.log(body);
+    const user = await User.findOne({ 
+        $or: [{ username: body.username }, { email: body.email }]
+    });
+
+    if (!user) {
+        return res.status(400).json({ message: "The user does not exist in the database." });
+    }
+
+    const correctPw = await user.isCorrectPassword(body.password);
+
+    if (!correctPw) {
+        return res.status(400).json({ message: "The password for the requested account is incorrect."})
+    }
+
+    const token = signToken(user);
+    res.json({ token, user })
 }
 
 module.exports = { getUser, login };

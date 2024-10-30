@@ -14,7 +14,8 @@ import "./Login.css";
 const Login = () => {
   const [loginData, setLoginData] = useState({ 
     username: "", 
-    password: "" });
+    password: "" 
+  });
 
   const [validated] = useState(false);
 
@@ -50,7 +51,7 @@ const Login = () => {
 
   return (
     <Container component="main" maxWidth="xs" className="login-form">
-      {/* <CssBaseline /> */}
+
       <div>
         <Typography component="h1" variant="h5">
           Login
