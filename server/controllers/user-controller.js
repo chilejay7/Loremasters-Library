@@ -1,5 +1,16 @@
 const { User } = require('../models');
 
+const createUser = async({ body }, res) => {
+    const user = await User.create(body);
+
+    if (!user) {
+        return res.status(400).json({ message: 'Something went wrong.  A new user was not created.'})
+    }
+
+    const token = signToken(user);
+    res.json({ token, user });
+}
+
 const getUser = async (req, res) => {
     const { user, username, id } = req.params;
     const searchedUser = await User.findOne({
@@ -33,4 +44,8 @@ const login = async ({ body }, res) => {
     res.json({ token, user })
 }
 
-module.exports = { getUser, login };
+module.exports = { 
+    getUser, 
+    login,
+    createUser
+ };
