@@ -5,8 +5,6 @@ const path = require("path");
 const db = require('./config/connection');
 const morgan = require("morgan");
 
-require('dotenv').config();
-
 const routes = require("./routes");
 
 app.use(express.json());

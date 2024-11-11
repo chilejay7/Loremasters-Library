@@ -1,13 +1,14 @@
 const router = require('express').Router();
 
+const { authMiddleware } = require('../../utils/auth');
+
 const { 
+    createUser,
     getUser,
     login, 
 } = require('../../controllers/user-controller');
 
-router.get('/', (req, res) => {
-    res.send('Login & user routes are responding!');
-});
+router.route('/').post(createUser).put(authMiddleware);
 
 router.route('/currentUser').get(getUser);
 
