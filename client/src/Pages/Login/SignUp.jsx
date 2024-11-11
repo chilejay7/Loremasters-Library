@@ -29,6 +29,36 @@ const handleChange = (evt) => {
   console.log(userSignupData);
 }
 
+const handleSubmit = async (evt) => {
+  evt.preventDefault();
+
+  try {
+    const response = await createUser(userSignupData);
+
+    if (!response.ok) {
+      throw new Error('Soemthing went wrong.  Please submit your information and try again.')
+    }
+
+    const { token, user } = await response.json();
+    console.log(user, token);
+    // Auth.login(token);
+
+  } catch (err) {
+    console.error(err);
+  }
+
+
+  console.log('Thank you. Your information has been submitted.  An account will be created using the infomration provided.');
+
+  setUserSignupData({
+    firstName:'',
+    lastName:'', 
+    email: '',
+    username: '', 
+    password:''
+  })
+}
+
   return (
     <Container component="main" maxWidth="xs" className='login-form'>
       {/* <CssBaseline /> */}
@@ -36,7 +66,7 @@ const handleChange = (evt) => {
         <Typography component="h1" variant="h5">
           Sign up
         </Typography>
-        <form  noValidate>
+        <form  noValidate onSubmit={handleSubmit}>
           <Grid container spacing={2}>
             <Grid item xs={12} sm={6}>
               <TextField
