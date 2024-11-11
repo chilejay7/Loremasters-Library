@@ -1,3 +1,5 @@
+import { useState } from 'react';
+
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
 import FormControlLabel from '@mui/material/FormControlLabel';
@@ -12,6 +14,20 @@ import './Login.css';
 import { createUser } from '../../Utils/API';
 
 export default function SignUp() {
+
+const [ userSignupData, setUserSignupData ] = useState({ 
+  firstName:'',
+  lastName:'', 
+  email: '',
+  username: '', 
+  password:''
+});
+
+const handleChange = (evt) => {
+  const { name, value } = evt.target;
+  setUserSignupData({...userSignupData, [name]: value});
+}
+
   return (
     <Container component="main" maxWidth="xs" className='login-form'>
       {/* <CssBaseline /> */}
@@ -32,6 +48,7 @@ export default function SignUp() {
                 label="First Name"
                 autoFocus
                 className="login-field"
+                onChange={handleChange}
               />
             </Grid>
             <Grid item xs={12} sm={6}>
@@ -44,6 +61,7 @@ export default function SignUp() {
                 name="lastName"
                 autoComplete="lname"
                 className="login-field"
+                onChange={handleChange}
               />
             </Grid>
             <Grid item xs={12}>
@@ -56,6 +74,7 @@ export default function SignUp() {
                 name="email"
                 autoComplete="email"
                 className="login-field"
+                onChange={handleChange}
               />
             </Grid>
             <Grid item xs={12}>
@@ -68,6 +87,7 @@ export default function SignUp() {
                 name="username"
                 autoComplete="username"
                 className="login-field"
+                onChange={handleChange}
               />
             </Grid>
             <Grid item xs={12}>
@@ -81,6 +101,7 @@ export default function SignUp() {
                 id="password"
                 autoComplete="current-password"
                 className="login-field"
+                onChange={handleChange}
               />
             </Grid>
             <Grid item xs={12}>
