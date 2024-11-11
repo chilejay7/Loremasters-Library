@@ -9,6 +9,8 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import './Login.css';
 
+import { createUser } from '../../Utils/API';
+
 export default function SignUp() {
   return (
     <Container component="main" maxWidth="xs" className='login-form'>
