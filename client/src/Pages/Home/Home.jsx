@@ -30,7 +30,7 @@ export default function Home() {
 
     } catch (error) {
       console.error(
-        "There was an error fetching data from the API.  Please try again.",
+        "There was an error fetching data from the Google Books API.  Please try again.",
         error
       );
     }

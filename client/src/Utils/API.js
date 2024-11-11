@@ -1,4 +1,4 @@
-const loginUser = (userData) => {
+export const loginUser = (userData) => {
     return fetch('api/users/login', {
         method: 'POST',
         headers: {
@@ -8,7 +8,7 @@ const loginUser = (userData) => {
     });
 };
 
-const createUser = (userData) => {
+export const createUser = (userData) => {
     return fetch('/api/users', {
         method: 'POST',
         headers: {
@@ -16,9 +16,4 @@ const createUser = (userData) => {
         },
         body: JSON.stringify(userData),
     });
-};
-
-export default { 
-    loginUser, 
-    createUser 
 };

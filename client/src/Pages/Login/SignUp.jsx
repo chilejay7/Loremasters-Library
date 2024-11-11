@@ -26,6 +26,7 @@ const [ userSignupData, setUserSignupData ] = useState({
 const handleChange = (evt) => {
   const { name, value } = evt.target;
   setUserSignupData({...userSignupData, [name]: value});
+  console.log(userSignupData);
 }
 
   return (
