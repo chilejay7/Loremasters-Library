@@ -16,11 +16,11 @@ import { createUser } from '../../Utils/API';
 export default function SignUp() {
 
 const [ userSignupData, setUserSignupData ] = useState({ 
-  firstName:'',
-  lastName:'', 
+  firstName: '',
+  lastName: '', 
   email: '',
   username: '', 
-  password:''
+  password: ''
 });
 
 const handleChange = (evt) => {
