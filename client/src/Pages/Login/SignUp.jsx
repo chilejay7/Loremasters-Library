@@ -1,72 +1,78 @@
-import { useState } from 'react';
+import { useState } from "react";
 
-import Button from '@mui/material/Button';
-import TextField from '@mui/material/TextField';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import Checkbox from '@mui/material/Checkbox';
-import NavLink from '@mui/material/Link';
-import Grid from '@mui/material/Grid';
-import Box from '@mui/material/Box';
-import Typography from '@mui/material/Typography';
-import Container from '@mui/material/Container';
-import './Login.css';
+import Button from "@mui/material/Button";
+import TextField from "@mui/material/TextField";
+import FormControlLabel from "@mui/material/FormControlLabel";
+import Checkbox from "@mui/material/Checkbox";
+import NavLink from "@mui/material/Link";
+import Grid from "@mui/material/Grid";
+import Box from "@mui/material/Box";
+import Typography from "@mui/material/Typography";
+import Container from "@mui/material/Container";
+import "./Login.css";
 
-import { createUser } from '../../Utils/API';
+import { createUser } from "../../Utils/API";
 
 export default function SignUp() {
+  const [userSignupData, setUserSignupData] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    username: "",
+    password: "",
+    checkbox: false,
+  });
 
-const [ userSignupData, setUserSignupData ] = useState({ 
-  firstName: '',
-  lastName: '', 
-  email: '',
-  username: '', 
-  password: ''
-});
+  const handleChange = (evt) => {
+    const { name, value, type, checked } = evt.target;
 
-const handleChange = (evt) => {
-  const { name, value } = evt.target;
-  setUserSignupData({...userSignupData, [name]: value});
-  console.log(userSignupData);
-}
+    const newValue = type === "checkbox" ? checked : value;
 
-const handleSubmit = async (evt) => {
-  evt.preventDefault();
+    setUserSignupData({ ...userSignupData, [name]: newValue });
+    console.log(userSignupData);
+  };
 
-  try {
-    const response = await createUser(userSignupData);
+  const handleSubmit = async (evt) => {
+    evt.preventDefault();
 
-    if (!response.ok) {
-      throw new Error('Soemthing went wrong.  Please submit your information and try again.')
+    try {
+      const response = await createUser(userSignupData);
+
+      if (!response.ok) {
+        throw new Error(
+          "Soemthing went wrong.  Please submit your information and try again."
+        );
+      }
+
+      const { token, user } = await response.json();
+      console.log(user, token);
+      // Auth.login(token);
+    } catch (err) {
+      console.error(err);
     }
 
-    const { token, user } = await response.json();
-    console.log(user, token);
-    // Auth.login(token);
+    console.log(
+      "Thank you. Your information has been submitted.  An account will be created using the infomration provided."
+    );
 
-  } catch (err) {
-    console.error(err);
-  }
-
-
-  console.log('Thank you. Your information has been submitted.  An account will be created using the infomration provided.');
-
-  setUserSignupData({
-    firstName:'',
-    lastName:'', 
-    email: '',
-    username: '', 
-    password:''
-  })
-}
+    setUserSignupData({
+      firstName: "",
+      lastName: "",
+      email: "",
+      username: "",
+      password: "",
+      checkbox: false,
+    });
+  };
 
   return (
-    <Container component="main" maxWidth="xs" className='login-form'>
+    <Container component="main" maxWidth="xs" className="login-form">
       {/* <CssBaseline /> */}
       <div>
         <Typography component="h1" variant="h5">
           Sign up
         </Typography>
-        <form  noValidate onSubmit={handleSubmit}>
+        <form noValidate onSubmit={handleSubmit}>
           <Grid container spacing={2}>
             <Grid item xs={12} sm={6}>
               <TextField
@@ -137,8 +143,18 @@ const handleSubmit = async (evt) => {
             </Grid>
             <Grid item xs={12}>
               <FormControlLabel
-                control={<Checkbox value="allowExtraEmails" color="primary" />}
-                label="I want to receive updates via email."
+                control={
+                  <Checkbox
+                    // value="allowEmails"
+                    type="checkbox"
+                    color="primary"
+                    name="checkbox"
+                    id="checkbox"
+                    checked={userSignupData.checkbox}
+                    onChange={handleChange}
+                  />
+                }
+                label="I would like to receive updates via email."
               />
             </Grid>
           </Grid>
@@ -153,16 +169,14 @@ const handleSubmit = async (evt) => {
           </Button>
           <Grid container justifyContent="flex-end">
             <Grid item>
-              <NavLink href="/login" variant="body2" className='login-link'>
+              <NavLink href="/login" variant="body2" className="login-link">
                 Already have an account? Sign-in
               </NavLink>
             </Grid>
           </Grid>
         </form>
       </div>
-      <Box mt={5}>
-       
-      </Box>
+      <Box mt={5}></Box>
     </Container>
   );
 }
