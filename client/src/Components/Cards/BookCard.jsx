@@ -17,7 +17,7 @@ export default function BookCard({ book }) {
             </Card.Title>
           </div>
 
-          <hr></hr>
+          <hr />
           
           <Card.Link href={book.volumeInfo.previewLink} target="_blank">
             <Image
@@ -34,7 +34,7 @@ export default function BookCard({ book }) {
 
           <BasicRating rating={book.volumeInfo.averageRating} />
 
-          <hr></hr>
+          <hr />
 
           <Card.Text className="book-description">
             {book.volumeInfo.description}

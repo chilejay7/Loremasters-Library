@@ -7,7 +7,7 @@ import "./Home.css";
 export default function Home() {
   const apiKey = import.meta.env.VITE_BOOK_KEY;
 
-  const [searchTerm, setSearchTerm] = useState('steven erikson');
+  const [searchTerm, setSearchTerm] = useState("steven erikson");
 
   const [bookData, updateBookData] = useState();
 
@@ -26,8 +26,7 @@ export default function Home() {
 
       updateBookData(books);
 
-      setSearchTerm('');
-
+      setSearchTerm("");
     } catch (error) {
       console.error(
         "There was an error fetching data from the Google Books API.  Please try again.",
@@ -37,9 +36,7 @@ export default function Home() {
   };
 
   useEffect(() => {
-
     getBook();
-
   }, []);
 
   const handleChange = (evt) => {
@@ -61,7 +58,11 @@ export default function Home() {
 
   return (
     <>
-    <SearchForm handleSearch={ handleSearch } handleChange={ handleChange } searchTerm={ searchTerm } />
+      <SearchForm
+        handleSearch={handleSearch}
+        handleChange={handleChange}
+        searchTerm={searchTerm}
+      />
 
       <div id="main-body">
         {bookData ? (
@@ -77,7 +78,14 @@ export default function Home() {
             </div>
           </>
         ) : (
-          <h3 className="loading construction">Loading...Book Data Will Appear Here</h3>
+          <>
+            <h3 className="loading construction">
+              Loading...Book Data Will Appear Here
+            </h3>
+            <h3 className="loading construction">
+              Something may have gone wrong. We're looking into it.
+            </h3>
+          </>
         )}
       </div>
     </>
