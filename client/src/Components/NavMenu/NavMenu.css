@@ -23,10 +23,10 @@
     margin: 0;
     font-family: "Metal Mania";
     font-size: 1rem;
+}
 
-    & .NavMenu {
-        width: 50%;
-    }
+.NavMenu {
+    width: 50%;
 }
 
 .navbar-nav {
