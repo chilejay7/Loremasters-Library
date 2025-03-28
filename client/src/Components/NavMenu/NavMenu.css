@@ -8,7 +8,7 @@
     font-size: 1.5rem;
     color: black;
      
-    & a {
+    & #main-header a {
         text-decoration: none;
         color: black;
      }
