@@ -7,12 +7,12 @@
     font-weight: bold;
     font-size: 1.5rem;
     color: black;
-     
-    & #main-header a {
-        text-decoration: none;
-        color: black;
-     }
 }
+
+#main-header a {
+    text-decoration: none;
+    color: black;
+ }
 
 /* This styling applies to the profile avatar component when displayed in the mobile device menu. */
 .avatar {
