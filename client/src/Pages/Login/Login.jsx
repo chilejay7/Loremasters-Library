@@ -17,7 +17,7 @@ const Login = () => {
     password: ""
   });
 
-  const [validated] = useState(false);
+  const [validation, setValidation] = useState(false);
 
   const handleChange = (evt) => {
     const { name, value } = evt.target;

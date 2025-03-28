@@ -10,8 +10,8 @@ export default function NavMenu() {
   return (
     <>
       <header id="main-header">
-        <h1 id="site-header">The Loremaster's Library</h1>
-        <h2>A study of books & whiskey</h2>
+        <h1 id="site-header"><a href='/'>The Loremaster's Library</a></h1>
+        <h2>A study of Books, Whiskey, & Games</h2>
 
         <Navbar expand="lg" className="bg-body-tertiary">
           <Container className="NavMenu">
