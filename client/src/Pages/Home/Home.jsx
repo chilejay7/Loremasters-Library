@@ -12,7 +12,7 @@ export default function Home() {
   const [bookData, updateBookData] = useState();
 
   const [errorMessage, setErrorMessage] = useState(null);
-  
+
 
   const getBook = async () => {
     try {
@@ -53,11 +53,11 @@ export default function Home() {
   const handleChange = (evt) => {
     evt.preventDefault();
 
-    const text = evt.target.value;
-    console.log("The new search term is:", text);
+    const term = evt.target.value;
+    console.log("The new search term is:", term);
 
     setSearchTerm((currTerm) => {
-      currTerm = text;
+      currTerm = term;
       return currTerm;
     });
   };
