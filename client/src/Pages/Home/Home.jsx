@@ -11,8 +11,13 @@ export default function Home() {
 
   const [bookData, updateBookData] = useState();
 
+  const [errorMessage, setErrorMessage] = useState(null);
+
+
   const getBook = async () => {
     try {
+      setErrorMessage(null);
+
       console.log("The search term is:", searchTerm);
 
       const response = await axios.get(
@@ -27,11 +32,17 @@ export default function Home() {
       updateBookData(books);
 
       setSearchTerm("");
+
     } catch (error) {
+
       console.error(
         "There was an error fetching data from the Google Books API.  Please try again.",
         error
       );
+
+      const message = error.response.data.error.message
+
+      setErrorMessage(message);
     }
   };
 
@@ -42,11 +53,11 @@ export default function Home() {
   const handleChange = (evt) => {
     evt.preventDefault();
 
-    const text = evt.target.value;
-    console.log("The new search term is:", text);
+    const term = evt.target.value;
+    console.log("The new search term is:", term);
 
     setSearchTerm((currTerm) => {
-      currTerm = text;
+      currTerm = term;
       return currTerm;
     });
   };
@@ -83,7 +94,9 @@ export default function Home() {
               Loading...Book Data Will Appear Here
             </h3>
             <h3 className="loading construction">
-              Something may have gone wrong. We're looking into it.
+              Something may have gone wrong.
+              <hr />
+              {errorMessage}
             </h3>
           </>
         )}
