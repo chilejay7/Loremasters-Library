@@ -7,21 +7,21 @@ import "./Home.css";
 export default function Home() {
   const apiKey = import.meta.env.VITE_BOOK_KEY;
 
-  const [searchTerm, setSearchTerm] = useState("steven erikson");
+  const [initialBook, setInitialBook] = useState("steven erikson");
 
   const [bookData, updateBookData] = useState();
 
   const [errorMessage, setErrorMessage] = useState(null);
 
 
-  const getBook = async () => {
+  const getBook = async (keyword) => {
     try {
       setErrorMessage(null);
 
-      console.log("The search term is:", searchTerm);
+      console.log("The search term is:", keyword);
 
       const response = await axios.get(
-        `https://www.googleapis.com/books/v1/volumes?q=${searchTerm}&maxResults=12&key=${apiKey}`
+        `https://www.googleapis.com/books/v1/volumes?q=${keyword}&maxResults=12&key=${apiKey}`
       );
 
       const books = response.data.items;
@@ -31,8 +31,6 @@ export default function Home() {
 
       updateBookData(books);
 
-      setSearchTerm("");
-
     } catch (error) {
 
       console.error(
@@ -40,39 +38,21 @@ export default function Home() {
         error
       );
 
-      const message = error.response.data.error.message
+      const errorMessage = error.response.data.error.message
 
-      setErrorMessage(message);
+      setErrorMessage(errorMessage);
     }
   };
 
   useEffect(() => {
-    getBook();
+    getBook(initialBook);
+    setInitialBook("");
   }, []);
-
-  const handleChange = (evt) => {
-    evt.preventDefault();
-
-    const term = evt.target.value;
-    console.log("The new search term is:", term);
-
-    setSearchTerm((currTerm) => {
-      currTerm = term;
-      return currTerm;
-    });
-  };
-
-  const handleSearch = (evt) => {
-    evt.preventDefault();
-    getBook();
-  };
 
   return (
     <>
       <SearchForm
-        handleSearch={handleSearch}
-        handleChange={handleChange}
-        searchTerm={searchTerm}
+        handleSearch={getBook}
       />
 
       <div id="main-body">
@@ -93,7 +73,7 @@ export default function Home() {
             <h3 className="loading construction">
               Loading...Book Data Will Appear Here
             </h3>
-            <h3 className="loading construction">
+            <h3 className="loading construction error">
               Something may have gone wrong.
               <hr />
               {errorMessage}
