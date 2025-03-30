@@ -49,23 +49,6 @@ export default function Home() {
     setInitialBook("");
   }, []);
 
-  // const handleChange = (evt) => {
-  //   evt.preventDefault();
-
-  //   const term = evt.target.value;
-  //   console.log("The new search term is:", term);
-
-  //   setSearchTerm((currTerm) => {
-  //     currTerm = term;
-  //     return currTerm;
-  //   });
-  // };
-
-  const searchBook = (evt, book) => {
-    evt.preventDefault();
-    getBook(book);
-  };
-
   return (
     <>
       <SearchForm
