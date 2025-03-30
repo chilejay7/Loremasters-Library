@@ -5,7 +5,7 @@ import './SearchForm.css';
 
 const SearchForm = ({ handleSearch }) => {
 
-  console.log("The imported function is:", handleSearch)
+  console.log("The imported function is:", handleSearch);
 
   const [searchTerm, setSearchTerm] = useState("");
 
@@ -24,8 +24,9 @@ const SearchForm = ({ handleSearch }) => {
   const handleSubmit = (evt) => {
     evt.preventDefault();
     handleSearch(searchTerm);
+    setSearchTerm("");
   };
-  
+
   return (
     <Form className="d-flex" onSubmit={handleSubmit} id="search-form">
       <Form.Control
