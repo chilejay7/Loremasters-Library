@@ -6,18 +6,27 @@ const Tabletop = () => {
 
     const [gameTerm, setGameTerm] = useState("League of Dungeoneers");
 
-    const [response, setResponse] = useState(null);
+    const [gameData, setGameData] = useState(null);
 
     const findGame = async (keyword) => {
         console.log("The tabletop search term is:", keyword);
 
-        const response = await axios.get(
+        try{
+          const response = await axios.get(
             `https://boardgamegeek.com/xmlapi2/search?query=${keyword}`
         );
 
-        console.log("The response from the BGG API is:", response.data);
+        setGameData({ games: response.data });
 
-        setResponse(response.data);
+        console.log("The response from the BGG API is:", gameData);
+        
+        }
+
+        catch (err) {
+            console.error("There was an error fetching the game data:", err);
+        }
+
+        
     }
 
   return (
@@ -27,8 +36,6 @@ const Tabletop = () => {
       </h3>
 
       <SearchForm handleSearch={findGame} />
-
-      <h3>{response}</h3>
     </>
   );
 };
