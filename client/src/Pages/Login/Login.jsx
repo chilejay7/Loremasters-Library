@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { loginUser } from '../../Utils/API';
 
 import Form from "react-bootstrap/Form";
@@ -17,7 +17,7 @@ const Login = () => {
     password: ""
   });
 
-  const [validation, setValidation] = useState(false);
+  // const [validation, setValidation] = useState(false);s
 
   const handleChange = (evt) => {
     const { name, value } = evt.target;

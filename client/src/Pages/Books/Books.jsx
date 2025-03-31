@@ -13,7 +13,6 @@ export default function Home() {
 
   const [errorMessage, setErrorMessage] = useState(null);
 
-
   const getBook = async (keyword) => {
     try {
       setErrorMessage(null);
