@@ -13,8 +13,9 @@ const SearchForm = ({ handleSearch }) => {
     evt.preventDefault();
 
     const term = evt.target.value;
-    console.log("The new search term is:", term);
 
+    console.log("The new search term is:", term);
+    
     setSearchTerm((currTerm) => {
       currTerm = term;
       return currTerm;
