@@ -63,7 +63,15 @@ export default function Home() {
 
             <div id="card-display">
               {bookData.map((book) => (
-                <BookCard book={book} key={book.id} />
+                <BookCard 
+                book={book} 
+                key={book.id} 
+                title={book.volumeInfo.title} 
+                subtitle={book.volumeInfo.subtitle}
+                link={book.volumeInfo.previewLink}
+                rating={book.volumeInfo.averageRating}
+                description={book.volumeInfo.description}
+                />
               ))}
             </div>
           </>
