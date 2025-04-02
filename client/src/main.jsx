@@ -29,7 +29,7 @@ const router = createBrowserRouter([
         element: <SignUp />,
       },
       {
-        path:'/tabletop',
+        path:'/gamers_corner',
         element: <Tabletop />,
       },
       {
