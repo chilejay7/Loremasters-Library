@@ -3,6 +3,7 @@ import SearchForm from "../../Components/SearchForm/SearchForm";
 import { useState, useEffect } from "react";
 import { XMLParser } from "fast-xml-parser";
 import DisplayCard from "../../Components/Cards/DisplayCard";
+import "./Tabletop.css";
 
 const Tabletop = () => {
   const [initialGameTerm, setInitialGameTerm] = useState(
@@ -57,34 +58,36 @@ const Tabletop = () => {
       <SearchForm handleSearch={findGame} />
 
       <div id="main-body">
-        {gameData && Array.isArray(gameData) && gameData.length > 0 ? (
-          <>
-            <h3>{gameData[0]?.name?.value || "Name not available"}</h3>
-            <a
-              href={`https://www.boardgamegeek.com/boardgame/${gameData[0].id}`}
-              target="_blank"
-            >
-              {gameData[0].name.value}
-            </a>
+        <section id="game-body">
+          {gameData && Array.isArray(gameData) && gameData.length > 0 ? (
+            <>
+              <a
+                href={`https://www.boardgamegeek.com/boardgame/${gameData[0].id}`}
+                target="_blank"
+              >
+                <h3>{gameData[0]?.name?.value || "Name not available"}</h3>
+              </a>
 
-            <div id="card-display">
-              {gameData.map((game) => (
-                <DisplayCard key={game.id} 
-                id={game.id}
-                title={game.name.value}
-                subtitle={`${game.type} - ${game.yearpublished.value}`}
-                link={`https://www.boardgamegeek.com/boardgame/${game.id}`}
-                />
-              ))}
-            </div>
-          </>
-        ) : (
-          <>
-            <h3 className="loading construction">
-              Could not retrieve game data from state...
-            </h3>
-          </>
-        )}
+              <div id="card-display">
+                {gameData.map((game) => (
+                  <DisplayCard
+                    key={game.id}
+                    id={game.id}
+                    title={game.name.value}
+                    subtitle={`${game.type} - ${game.yearpublished?.value}`}
+                    link={`https://www.boardgamegeek.com/boardgame/${game.id}`}
+                  />
+                ))}
+              </div>
+            </>
+          ) : (
+            <>
+              <h3 className="loading construction">
+                Could not retrieve game data from state...
+              </h3>
+            </>
+          )}
+        </section>
       </div>
     </>
   );
