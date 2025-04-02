@@ -24,7 +24,8 @@ const Tabletop = () => {
         console.log("The response from the BGG API is:", xml);
 
         const options = {
-          ignoreAttributes : false
+          ignoreAttributes : false,
+          attributeNamePrefix : "",
       };
 
         const parser = new XMLParser(options);
