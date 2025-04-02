@@ -3,10 +3,10 @@ import Image from "react-bootstrap/Image";
 import BasicRating from "../Rating/Rating";
 import "./BookCard.css";
 
-export default function BookCard({ book, title, subtitle, link, rating, description }) {
+export default function BookCard({ id, title, subtitle, link, rating, description, image }) {
   return (
     <div className="card-container">
-      <Card key={book.id} className="book-card" bg="dark">
+      <Card key={id} className="book-card" bg="dark">
         <Card.Body>
           <div className="card-title">
             <Card.Title className="book-title">
@@ -21,11 +21,7 @@ export default function BookCard({ book, title, subtitle, link, rating, descript
           
           <Card.Link href={link} target="_blank">
             <Image
-              src={
-                book.volumeInfo.imageLinks
-                  ? book.volumeInfo.imageLinks.thumbnail
-                  : ""
-              }
+              src={image}
               title={title}
               alt={`${title} cover`}
               // rounded
