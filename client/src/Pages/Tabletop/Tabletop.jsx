@@ -1,7 +1,6 @@
 import axios from "axios";
 import SearchForm from "../../Components/SearchForm/SearchForm";
 import { useState, useEffect } from "react";
-import { parseStringPromise } from "xml2js";
 import { XMLParser } from "fast-xml-parser";
 
 const Tabletop = () => {
@@ -49,15 +48,29 @@ const Tabletop = () => {
         setInitialGameTerm("");
       }, []);
 
-  return (
-    <>
-      <h3 className="loading construction">
-        Tabletop Gaming Site Under Construction...
-      </h3>
-
-      <SearchForm handleSearch={findGame} />
-    </>
-  );
-};
-
+      return (
+        <>
+          <h3 className="loading construction">
+            Tabletop Gaming Site Under Construction...
+          </h3>
+      
+          <SearchForm handleSearch={findGame} />
+      
+          <div id="main-body">
+            {gameData && Array.isArray(gameData) && gameData.length > 0 ? (
+              <>
+                <h3>{gameData[0]?.name?.value || "Name not available"}</h3>
+                <a href={`https://www.boardgamegeek.com/boardgame/${gameData[0].id}`} target="_blank">{gameData[0]?.name?.value}</a>
+              </>
+            ) : (
+              <>
+                <h3 className="loading construction">
+                  Could not retrieve game data from state...
+                </h3>
+              </>
+            )}
+          </div>
+        </>
+      );
+    }
 export default Tabletop;
