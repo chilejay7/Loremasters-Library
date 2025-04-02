@@ -2,7 +2,7 @@ import axios from "axios";
 import SearchForm from "../../Components/SearchForm/SearchForm";
 import { useState, useEffect } from "react";
 import { XMLParser } from "fast-xml-parser";
-import BookCard from "../../Components/Cards/DisplayCard";
+import DisplayCard from "../../Components/Cards/DisplayCard";
 
 const Tabletop = () => {
   const [initialGameTerm, setInitialGameTerm] = useState(
@@ -66,12 +66,17 @@ const Tabletop = () => {
             >
               {gameData[0].name.value}
             </a>
-{/* 
+
             <div id="card-display">
               {gameData.map((game) => (
-                <BookCard book={game} key={game.id} />
+                <DisplayCard key={game.id} 
+                id={game.id}
+                title={game.name.value}
+                subtitle={`${game.type} - ${game.yearpublished.value}`}
+                link={`https://www.boardgamegeek.com/boardgame/${game.id}`}
+                />
               ))}
-            </div> */}
+            </div>
           </>
         ) : (
           <>
