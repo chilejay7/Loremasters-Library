@@ -1,9 +1,9 @@
 import Card from "react-bootstrap/Card";
 import Image from "react-bootstrap/Image";
 import BasicRating from "../Rating/Rating";
-import "./BookCard.css";
+import "./DisplayCard.css";
 
-export default function BookCard({ id, title, subtitle, link, rating, description, image }) {
+export default function DisplayCard({ id, title, subtitle, link, rating, description, image }) {
   return (
     <div className="card-container">
       <Card key={id} className="book-card" bg="dark">

@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import BookCard from "../../Components/Cards/BookCard";
+import DisplayCard from "../../Components/Cards/DisplayCard";
 import axios from "axios";
 import SearchForm from "../../Components/SearchForm/SearchForm";
 import "./Books.css";
@@ -63,7 +63,7 @@ export default function Home() {
 
             <div id="card-display">
               {bookData.map((book) => (
-                <BookCard 
+                <DisplayCard 
                 // book={book} 
                 key={book.id}
                 id={book.id} 

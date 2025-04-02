@@ -2,7 +2,7 @@ import axios from "axios";
 import SearchForm from "../../Components/SearchForm/SearchForm";
 import { useState, useEffect } from "react";
 import { XMLParser } from "fast-xml-parser";
-import BookCard from "../../Components/Cards/BookCard";
+import BookCard from "../../Components/Cards/DisplayCard";
 
 const Tabletop = () => {
   const [initialGameTerm, setInitialGameTerm] = useState(
