@@ -23,7 +23,7 @@ export default function DisplayCard({ id, title, subtitle, link, rating, descrip
             <Image
               src={image}
               title={title}
-              alt={`${title} cover`}
+              alt={title}
               // rounded
             />
           </Card.Link>
