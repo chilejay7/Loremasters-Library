@@ -65,7 +65,7 @@ const Tabletop = () => {
                 href={`https://www.boardgamegeek.com/boardgame/${gameData[0].id}`}
                 target="_blank"
               >
-                <h3>{gameData[0]?.name?.value || "Name not available"}</h3>
+                <h3 className="game-title">{gameData[0]?.name?.value || "Name not available"}</h3>
               </a>
 
               <div id="card-display">

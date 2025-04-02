@@ -1,3 +1,16 @@
 #main-body #game-body {
     background-image: url('./LoD2.jpg');
+    border-radius: .5rem;
 }
+
+#main-body #game-body a {
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.game-title {
+    padding: 1rem;
+    font-weight: bold;
+    color: white;
+}
+
