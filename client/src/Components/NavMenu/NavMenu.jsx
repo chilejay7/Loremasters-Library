@@ -21,7 +21,7 @@ export default function NavMenu() {
               <NavDropdown title="Site Locations" id="basic-nav-dropdown">
                   <NavDropdown.Item href="/books">Books</NavDropdown.Item>
                   <NavDropdown.Divider />
-                  <NavDropdown.Item href="/tabletop">Tabletop Games</NavDropdown.Item>
+                  <NavDropdown.Item href="/gamers_corner">Tabletop Games</NavDropdown.Item>
                   <NavDropdown.Divider />
                   <NavDropdown.Item href="/whiskey">Whiskey</NavDropdown.Item>
                   <NavDropdown.Divider />
