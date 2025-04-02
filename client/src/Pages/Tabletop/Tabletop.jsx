@@ -60,7 +60,7 @@ const Tabletop = () => {
             {gameData && Array.isArray(gameData) && gameData.length > 0 ? (
               <>
                 <h3>{gameData[0]?.name?.value || "Name not available"}</h3>
-                <a href={`https://www.boardgamegeek.com/boardgame/${gameData[0].id}`} target="_blank">{gameData[0]?.name?.value}</a>
+                <a href={`https://www.boardgamegeek.com/boardgame/${gameData[0].id}`} target="_blank">{gameData[0].name.value}</a>
               </>
             ) : (
               <>
