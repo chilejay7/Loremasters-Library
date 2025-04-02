@@ -8,7 +8,7 @@ const Tabletop = () => {
 
     const [initialGameTerm, setInitialGameTerm] = useState("League of Dungeoneers");
 
-    const [gameData, setGameData] = useState(null);
+    const [gameData, setGameData] = useState();
 
     const findGame = async (keyword) => {
         console.log("The tabletop search term is:", keyword);
@@ -31,9 +31,9 @@ const Tabletop = () => {
         
         const jsonResult = await parser.parse(xml);
 
-        console.log("Parsed XML result:", jsonResult);
+        console.log("The object to be written to state is:", jsonResult.items.item);
        
-        setGameData(jsonResult);
+        setGameData(jsonResult.items.item);
         
         }
 
