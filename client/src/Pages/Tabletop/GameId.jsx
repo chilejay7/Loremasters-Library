@@ -55,9 +55,12 @@ const GameId = () => {
         Game by Id Coming Soon...
       </h3>
 
-      <p>{id}</p>
+      <h3>{gameData?.name.value} {id}</h3>
+      <p>Number of Players: {gameData?.minplayers.value} - {gameData?.maxplayers.value}</p>
 
-      <img src={gameData?.thumbnail} alt={gameData?.name} />
+      <img src={gameData?.image} alt={gameData?.name} />
+
+      <p>{gameData?.description}</p>
     </>
   )
 }
