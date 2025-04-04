@@ -2,6 +2,7 @@ import axios from "axios";
 import SearchForm from "../../Components/SearchForm/SearchForm";
 import { useState, useEffect } from "react";
 import { XMLParser } from "fast-xml-parser";
+import { NavLink } from "react-router-dom";
 import DisplayCard from "../../Components/Cards/DisplayCard";
 import "./Tabletop.css";
 
@@ -12,12 +13,24 @@ const Tabletop = () => {
 
   const [gameData, setGameData] = useState();
 
+  const getGameId = async (gameId) => {
+    try {
+      const response = await axios.get(
+        `https://boardgamegeek.com/xmlapi2/thing=boardgame?id=${gameId}`
+      );
+
+      console.log("The id data for the game is:", response.data);
+    } catch (err) {
+      console.error("There was an error fetching the game id:", err);
+    }
+  };
+
   const findGame = async (keyword) => {
     console.log("The tabletop search term is:", keyword);
 
     try {
       const response = await axios.get(
-        `https://boardgamegeek.com/xmlapi2/search?query=${keyword}&videos=1`
+        `https://boardgamegeek.com/xmlapi2/search?query=${keyword}`
       );
 
       const xml = response.data;
@@ -59,14 +72,20 @@ const Tabletop = () => {
 
       <div id="main-body">
         <section id="game-body">
+
           {gameData && Array.isArray(gameData) && gameData.length > 0 ? (
             <>
               <a
                 href={`https://www.boardgamegeek.com/boardgame/${gameData[0].id}`}
                 target="_blank"
               >
-                <h3 className="game-title">{gameData[0]?.name?.value || "Name not available"}</h3>
+                <h3 className="game-title">
+                  {gameData[0]?.name?.value || "Name not available"}
+                </h3>
               </a>
+
+              {/* This element is being used to test the NavLink components */}
+              <NavLink to={`/gamers_corner/${gameData[0].id}`} className="game-link">TestLink</NavLink>
 
               <div id="card-display">
                 {gameData.map((game) => (
@@ -92,4 +111,5 @@ const Tabletop = () => {
     </>
   );
 };
+
 export default Tabletop;

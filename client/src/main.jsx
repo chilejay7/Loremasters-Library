@@ -6,6 +6,7 @@ import Books from './Pages/Books/Books.jsx';
 import Login from './Pages/Login/Login.jsx';
 import PipeCigar from './Pages/PipeCigar/PipeCigar.jsx';
 import Tabletop from './Pages/Tabletop/Tabletop.jsx';
+import GameId from './Pages/Tabletop/GameId.jsx';
 import Whiskey from './Pages/Whiskey/Whiskey.jsx';
 import SignUp from './Pages/Login/SignUp.jsx';
 import './index.css';
@@ -33,7 +34,10 @@ const router = createBrowserRouter([
         element: <Tabletop />,
       },
       {
-        index: true,
+        path:'/gamers_corner/:gameId',
+        element: <GameId />,
+      },
+      {
         path: '/books',
         element: <Books />,
       },
