@@ -17,7 +17,7 @@ const Tabletop = () => {
 
     try {
       const response = await axios.get(
-        `https://boardgamegeek.com/xmlapi2/search?query=${keyword}`
+        `https://boardgamegeek.com/xmlapi2/search?query=${keyword}&videos=1`
       );
 
       const xml = response.data;

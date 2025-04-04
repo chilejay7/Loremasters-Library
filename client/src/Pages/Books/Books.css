@@ -1,11 +1,15 @@
-#main-body #book-body {
+#main-body {
     padding: 10px;
     margin: 0 auto;
     justify-content: center;
     align-items: center;
     min-height: 75vh;
-    background-image: url('./gardens-of-the-moon.webp');
-    background-size: contain;
+  }
+
+  #main-body #book-body{
+    background-image: url('./MalazanDragon.jpg');
+    background: fill no-repeat;
+    border-radius: .5rem;
   }
 
   .loading {
