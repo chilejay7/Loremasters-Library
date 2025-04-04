@@ -57,7 +57,7 @@ const GameId = () => {
 
       <p>{id}</p>
 
-      <img src={gameData?.image} alt={gameData?.name} />
+      <img src={gameData?.thumbnail} alt={gameData?.name} />
     </>
   )
 }

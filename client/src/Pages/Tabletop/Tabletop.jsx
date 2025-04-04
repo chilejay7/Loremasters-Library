@@ -60,20 +60,25 @@ const Tabletop = () => {
 
       <div id="main-body">
         <section id="game-body">
-
           {gameData && Array.isArray(gameData) && gameData.length > 0 ? (
             <>
-              <a
-                href={`https://www.boardgamegeek.com/boardgame/${gameData[0].id}`}
-                target="_blank"
-              >
-                <h3 className="game-title">
+              <h3 className="game-title">
+                <a
+                  href={`https://www.boardgamegeek.com/boardgame/${gameData[0].id}`}
+                  target="_blank"
+                >
+                  {" "}
                   {gameData[0]?.name?.value || "Name not available"}
-                </h3>
-              </a>
+                </a>
+              </h3>
 
               {/* This element is being used to test the NavLink components */}
-              <NavLink to={`/gamers_corner/${gameData[0].id}`} className="game-link">TestLink</NavLink>
+              <NavLink
+                to={`/gamers_corner/${gameData[0].id}`}
+                className="game-link"
+              >
+                TestLink
+              </NavLink>
 
               <div id="card-display">
                 {gameData.map((game) => (
