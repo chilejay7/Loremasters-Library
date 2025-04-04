@@ -13,18 +13,6 @@ const Tabletop = () => {
 
   const [gameData, setGameData] = useState();
 
-  const getGameId = async (gameId) => {
-    try {
-      const response = await axios.get(
-        `https://boardgamegeek.com/xmlapi2/thing=boardgame?id=${gameId}`
-      );
-
-      console.log("The id data for the game is:", response.data);
-    } catch (err) {
-      console.error("There was an error fetching the game id:", err);
-    }
-  };
-
   const findGame = async (keyword) => {
     console.log("The tabletop search term is:", keyword);
 
