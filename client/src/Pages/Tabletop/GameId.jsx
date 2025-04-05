@@ -41,7 +41,7 @@ const GameId = () => {
 
   useEffect(() => {
     getGameId(gameId);
-  }, []);
+  }, [gameId]);
 
   return (
     <>

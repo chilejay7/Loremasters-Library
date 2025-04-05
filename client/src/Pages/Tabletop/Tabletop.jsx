@@ -70,7 +70,6 @@ const Tabletop = () => {
                   href={`https://www.boardgamegeek.com/boardgame/${gameData[0].id}`}
                   target="_blank"
                 >
-                  {" "}
                   {gameData[0]?.name?.value || "Name not available"}
                 </a>
               </h3>
@@ -86,7 +85,7 @@ const Tabletop = () => {
               <div id="card-display">
                 {gameData.map((game) => (
                   <DisplayCard
-                    key={game.id}
+                    key={crypto.randomUUID()}
                     id={game.id}
                     title={game.name.value}
                     subtitle={`${game.type} - ${game.yearpublished?.value}`}
