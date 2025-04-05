@@ -5,7 +5,7 @@ import "./DisplayCard.css";
 
 export default function DisplayCard({ id, title, subtitle, link, rating, description, image }) {
   return (
-    <div className="card-container">
+    <section className="card-container">
       <Card key={id} className="book-card" bg="dark">
         <Card.Body>
           <div className="card-title">
@@ -37,6 +37,6 @@ export default function DisplayCard({ id, title, subtitle, link, rating, descrip
           </Card.Text>
         </Card.Body>
       </Card>
-    </div>
+    </section>
   );
 }

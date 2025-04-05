@@ -14,6 +14,9 @@ const Tabletop = () => {
   const [gameData, setGameData] = useState();
 
   const findGame = async (keyword) => {
+
+    setGameData(null);
+
     console.log("The tabletop search term is:", keyword);
 
     try {
@@ -40,6 +43,7 @@ const Tabletop = () => {
       );
 
       setGameData(jsonResult.items.item);
+
     } catch (err) {
       console.error("There was an error fetching the game data:", err);
     }
@@ -47,8 +51,7 @@ const Tabletop = () => {
 
   useEffect(() => {
     findGame(initialGameTerm);
-    setInitialGameTerm("");
-  }, []);
+  }, [initialGameTerm]);
 
   return (
     <>
