@@ -34,7 +34,8 @@ const router = createBrowserRouter([
         element: <Tabletop />,
       },
       {
-        path:'/gamers_corner/:gameId',
+        // The name of the parameter must match the name used in the useParams() hook.  If not it will return undefined.
+        path:'/gamers_corner/:id',
         element: <GameId />,
       },
       {
