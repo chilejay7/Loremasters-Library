@@ -54,7 +54,7 @@ const GameId = () => {
         Number of Players: {gameData?.minplayers.value} -{" "}
         {gameData?.maxplayers.value}
       </p>
-      <p>{gameData?.yearpublished.value}</p>
+      <p>Published: {gameData?.yearpublished.value}</p>
 
       <img src={gameData?.image} alt={gameData?.name} />
 
