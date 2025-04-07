@@ -56,9 +56,11 @@ const GameId = () => {
       </p>
       <p>Published: {gameData?.yearpublished.value}</p>
 
-      <img src={gameData?.image} alt={gameData?.name} />
+      <hr />
 
       <p>{gameData?.description}</p>
+
+      <img src={gameData?.image} alt={gameData?.name} />
     </>
   );
 };
