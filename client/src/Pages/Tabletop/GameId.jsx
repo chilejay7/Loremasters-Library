@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { XMLParser } from "fast-xml-parser";
 import "./Tabletop.css";
+import "./GameId.css";
 
 const GameId = () => {
   // The name of the parameter must match the name used in the useParams() hook.  If not it will return undefined.
@@ -55,12 +56,17 @@ const GameId = () => {
         {gameData?.maxplayers.value}
       </p>
       <p>Published: {gameData?.yearpublished.value}</p>
+      <p>
+        {gameData?.minplaytime.value} - {gameData?.maxplaytime.value} Minutes
+      </p>
 
       <hr />
 
-      <p>{gameData?.description}</p>
-
       <img src={gameData?.image} alt={gameData?.name} />
+
+      <hr />
+
+      <p className="game-description">{gameData?.description}</p>
     </>
   );
 };
