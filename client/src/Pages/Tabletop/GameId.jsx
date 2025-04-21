@@ -52,8 +52,7 @@ const GameId = () => {
         {gameData?.name.value} {id}
       </h3>
       <p>
-        Number of Players: {gameData?.minplayers.value} -{" "}
-        {gameData?.maxplayers.value}
+        Number of Players: {gameData?.minplayers.value} - {gameData?.maxplayers.value}
       </p>
       <p>Published: {gameData?.yearpublished.value}</p>
       <p>
