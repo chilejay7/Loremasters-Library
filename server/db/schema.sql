@@ -1,3 +1,3 @@
-require('dotenv').config();
+DROP DATABASE IF EXISTS satellite_db;
 
-CREATE DATABASE IF NOT EXISTS loremasters_library;
+CREATE DATABASE loremasters_library;
